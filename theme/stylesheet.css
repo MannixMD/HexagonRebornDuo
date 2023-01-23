@@ -1,0 +1,22 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			HexagonReborn
+	Based on style:		prosilver
+	Original author:	phpBB Limited ( https://www.phpbb.com/ )
+	Modified by:		MannixMD @MannixMD
+    --------------------------------------------------------------
+*/
+
+@import url("normalize.css?hash=48eb3f89");
+@import url("base.css?hash=8acf858");
+@import url("utilities.css?hash=d8f72c42");
+@import url("common.css?hash=cefd0f79");
+@import url("links.css?hash=6aa7cc2a");
+@import url("content.css?hash=5ac496c");
+@import url("buttons.css?hash=2901cb28");
+@import url("cp.css?hash=6c07f0cf");
+@import url("forms.css?hash=ad516f78");
+@import url("icons.css?hash=7b1f733");
+@import url("colours.css?hash=1671e069");
+@import url("responsive.css?hash=73f400e8");
+@import url("hexagon.css?hash=69E717BF");
