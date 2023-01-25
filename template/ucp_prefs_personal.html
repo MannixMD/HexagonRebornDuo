@@ -12,46 +12,44 @@
 	{% if ERROR %}<p class="error">{{ ERROR }}</p>{% endif %}
 	{% EVENT ucp_prefs_personal_prepend %}
 	{% if definition.COLORPICKER == 'yes' %}
-	{% if definition.COLORPICKERPOSITION == 'ucp' %}
+	
 	<dl>
 		<dt><label>ColorPicker {{ lang('COLON') }}</label></dt>
-		<dd>
-        <a style="display: none;" class="colorbutton colororange" href="#"></a>
-		<a style="display: none;" class="colorbutton colorgreen" href="#"></a>
-		<a style="display: none;" class="colorbutton colorblue" href="#"></a>
-		<a style="display: none;" class="colorbutton colorcyan" href="#"></a>
-		<a style="display: none;" class="colorbutton colorviolet" href="#"></a>
-	{% if definition.CUSTOMCOLORPICKERCOLOR == 'yes' %}	
-		<a style="display: none;" class="colorbutton colorcustom" href="#"></a>
-	{% endif %}	
-		<a class="clearstorage" style="display: none; vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-trash fa-fw icon-xl" aria-hidden="false"></i></a>
-		<fieldset id="theme">
-    <input type="radio" name="theme" id="orange">
-    <input type="radio" name="theme" id="blue">
-    <input type="radio" name="theme" id="green">   
-    <input type="radio" name="theme" id="cyan">
-    <input type="radio" name="theme" id="violet">
-    <input type="radio" name="theme" id="custom">
-  </fieldset>
-
+		<dd>	
+	<fieldset id="colorPicker">
+    	<input type="radio" name="theme" id="orange">
+    	<input type="radio" name="theme" id="blue">
+    	<input type="radio" name="theme" id="green">   
+    	<input type="radio" name="theme" id="cyan">
+    	<input type="radio" name="theme" id="violet">
+		{% if definition.CUSTOMCOLORPICKERCOLOR == 'yes' %}	
+    	<input type="radio" name="theme" id="custom">
+		{% endif %}	
+		<a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a>
+  	</fieldset>
 	</dd>
+	</dl>
+	<dl>
+	<dt><label>Custom Color Picker {{ lang('COLON') }}</label></dt>
+	<dd><input type="color" id="accent" ><a class="clearstorage2" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
 	</dl>
 	<dl>
 	<dt><label>Theme Switcher {{ lang('COLON') }}</label></dt>
 	<dd>
-		<a style="display: none;" id="toggle" href="#"><i class="themeIcon icon icon-xl fa-fw" aria-hidden="false"></i><span></span></a>
-		<input type="checkbox" name="Theme" id="Theme">
-		<label for="Theme" id="themes">
-			<i class="icon icon-xl fa-sun-o fa-fw"></i>
+		<fieldset id="ThemePicker">
+		<input type="radio" name="Theme" id="Dark">
+		<label for="Dark">
 			<i class="icon icon-xl fa-moon-o fa-fw"></i>
 		</label>
+		<input type="radio" name="Theme" id="Light">
+		<label for="Light">
+			<i class="icon icon-xl fa-sun-o fa-fw"></i>
+		</label>
+		</fieldset>
 	</dd>
 	</dl>
-	<dl>
-	<dt><label>ColorPicker 2.0 {{ lang('COLON') }}</label></dt>
-	<dd><input type="color" id="accent" ><a class="clearstorage2" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-trash fa-fw icon-xl" aria-hidden="false"></i></a></dd>
-	</dl>
-	{% endif %}
+
+	
 	{% endif %}
 	<dl>
 		<dt><label for="viewemail0">{{ lang('SHOW_EMAIL') }}{{ lang('COLON') }}</label></dt>
@@ -169,72 +167,38 @@ ColorPicker.addEventListener("input", function () {
     let accentColor = ColorPicker.value;
     root.style.setProperty("--accent-color", accentColor);
     localStorage.setItem("accent", accentColor);
-	document.querySelector(".colorcustom").style.backgroundColor = accentColor
+	document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
 	document.querySelector('input[id="custom"]').style.accentColor = accentColor
   },
   false
 );
-// This sets the color value for input
+// This sets the color value for input on page load
 if( localStorage.getItem("accent") === null ) {
-	ColorPicker.value = "#de7300";}else {
+	ColorPicker.value = "#ffffff";}else {
 let accentColor = localStorage.getItem("accent");
 	ColorPicker.value = accentColor;
-	document.querySelector(".colorcustom").style.backgroundColor = accentColor
+	document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
 	document.querySelector('input[id="custom"]').style.accentColor = accentColor
 }
 
 // Clears LocalStorage on trashbin click
-const ColorPickerClear = document.querySelector(".clearstorage2");
-ColorPickerClear.addEventListener('click', function() {
+const ColorPickerClearCustom = document.querySelector(".clearstorage2");
+ColorPickerClearCustom.addEventListener('click', function() {
 	localStorage.removeItem('accent');
 	window.location.reload(true);
 	});
 
-document.querySelector("#toggle").addEventListener('click', ()=>{
-	let state = localStorage.getItem("Theme");
-	let statePref = localStorage.getItem("ThemePref")
-	if (state == 'Dark'){
-		// setLightTheme();
-		setIconMoon();
-		localStorage.setItem("Theme", 'Light')
-	}else{
-		// setDarkTheme();
-		setIconSun();
-		localStorage.setItem("Theme", 'Dark')
-	}
 
-})
-const checkbox = document.querySelector("input[name=Theme]");
-checkbox.addEventListener('change', function() {
-  if (this.checked) {
-	  console.log("Checkbox is checked..");
-	// setDarkTheme();
-	localStorage.setItem("Theme", 'Dark')
-} else {
-	console.log("Checkbox is not checked..");
-	// setLightTheme();
-	localStorage.setItem("Theme", 'Light')
-  }
-});
 
-function setIconMoon() {
-	toggleIcon.classList.add('fa-moon-o');
-	toggleIcon.classList.remove('fa-sun-o');
-	toggleIcon.setAttribute('title', 'Switch to Dark Theme')
-}
-function setIconSun(){
-	toggleIcon.classList.add('fa-sun-o');	
-	toggleIcon.classList.remove('fa-moon-o');
-	toggleIcon.setAttribute('title', 'Switch to Light Theme')	
-}
+// Sets accent color in LocalStorage on radio click
+let radiosPicker = document.querySelectorAll(`input[name="theme"]`);
 
-let radios = document.querySelectorAll(`input[name="theme"]`);
-
-radios.forEach((radio) => {
+radiosPicker.forEach((radio) => {
   radio.addEventListener("change", (e) => {
     localStorage.setItem("colorpickerReborn", e.target.id);
   });
 });
+// Checks input on selected color from local storage
 const lS = localStorage.getItem("colorpickerReborn");
 console.log(lS)
 switch (lS) {
@@ -259,7 +223,75 @@ switch (lS) {
   default:
    document.querySelector('input[id="orange"]').checked = "true";
 }
+// Removes accent color from local storage
+const ColorPickerClear = document.querySelector(".clearstorage");
+ColorPickerClear.addEventListener('click', function() {
+	localStorage.removeItem('colorpickerReborn');
+	window.location.reload(true);
+	});
+console.log(localStorage.getItem("Theme"))
 
 </script>
+{% if definition.ACCENTCOLOR == 'orange'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="orange"]').checked = "true";
+	 }
+</script>
+{% endif %}
+{% if definition.ACCENTCOLOR == 'blue'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="blue"]').checked = "true";
+	 }
+</script>
+{% endif %}
+{% if definition.ACCENTCOLOR == 'green'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="green"]').checked = "true";
+	 }
+</script>
+{% endif %}
+{% if definition.ACCENTCOLOR == 'violet'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="violet"]').checked = "true";
+	 }
+</script>
+{% endif %}
+{% if definition.ACCENTCOLOR == 'custom'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="custom"]').checked = "true";
+	 }
+</script>
+{% endif %}
+{% if definition.ACCENTCOLOR == 'cyan'%}
+<script>
+	if(lS == null){
+	 document.querySelector('input[id="cyan"]').checked = "true";
+	 }
+</script>
+{% endif %}
 {% endif %}
 {% INCLUDE 'ucp_footer.html' %}
+{% if definition.THEMESWITCHER == 'yes'%}
+<script>
+	// Sets Theme in LocalStorage on label click
+let radiosTheme = document.querySelectorAll(`input[name="Theme"]`);
+radiosTheme.forEach((radio) => {
+  radio.addEventListener("change", (e) => {
+    localStorage.setItem("Theme", e.target.id);
+  });
+});
+// Checks Theme input base on user choice	
+if (localStorage.getItem("Theme") == 'Dark'){
+document.querySelector('input[id="Dark"]').checked = "true";
+}else if (localStorage.getItem("Theme") == 'Light'){
+	document.querySelector('input[id="Light"]').checked = "true";
+}else{
+document.querySelector('input[id="Dark"]').checked = "true";	
+}
+</script>
+{% endif %}

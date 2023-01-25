@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
+<html style="
+	--bg-clr: #000000;
+    --main-clr: #171717;
+    --sec-clr: #262626;
+    --txt-clr: #e9ebee;
+    --extra-clr: #101010;"
+	 dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,42 +33,50 @@
 
 {% if U_CANONICAL %}
 	<link rel="canonical" href="{{ U_CANONICAL }}">
-{% endif %}
-
-<!--
-	phpBB style name: HexagonReborn
-	Based on style:   prosilver (this is the default phpBB3 style)
-	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:	  MannixMD @MannixMD
--->
+	{% endif %}
+	
+	<!--
+		phpBB style name: HexagonReborn
+		Based on style:   prosilver (this is the default phpBB3 style)
+		Original author:  Tom Beddard ( http://www.subBlue.com/ )
+		Modified by:	  MannixMD @MannixMD
+	-->
 <link href="{{ T_FONT_AWESOME_LINK }}" rel="stylesheet">
-<link href="{{ T_STYLESHEET_LINK }}" rel="stylesheet">
-{% INCLUDE 'options.html' %}
-{% if definition.ACCENTCOLOR == 'orange'%}
-<link href="{T_THEME_PATH}/orange.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
-{% if definition.ACCENTCOLOR == 'blue'%}
-<link href="{T_THEME_PATH}/blue.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
-{% if definition.ACCENTCOLOR == 'green'%}
-<link href="{T_THEME_PATH}/green.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
-{% if definition.ACCENTCOLOR == 'cyan'%}
-<link href="{T_THEME_PATH}/cyan.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
-{% if definition.ACCENTCOLOR == 'violet'%}
-<link href="{T_THEME_PATH}/violet.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
-{% if definition.ACCENTCOLOR == 'custom'%}
-<link href="{T_THEME_PATH}/custom.css" id="HexagonRebornColor" rel="stylesheet">
-{% endif %}
+<link href="{{ T_STYLESHEET_LINK }}?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+<link href="{T_THEME_PATH}/accent.css" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
-<link rel="stylesheet" href="#" id="HexagonRebornColorPicker">
-{% if definition.COLORPICKER == 'yes' %}
-{% INCLUDEJS 'colorpicker.js' %}
-{% endif %}
-<link href="{{ T_THEME_PATH }}/css/hexagon.css" rel="stylesheet">
-
+<link href="{{ T_THEME_PATH }}/css/hexagon.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+{% INCLUDE 'options.html' %}
+	{% if definition.ACCENTCOLOR == 'orange'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#de7300");
+	</script>
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'blue'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#0092de");
+	</script>
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'green'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#00de1f");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'cyan'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#00c1de");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'violet'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#7d00de");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'custom'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#de7300");
+	</script>	
+	{% endif %}
 {% if S_ALLOW_CDN %}
 <script>
 	WebFontConfig = {
@@ -159,7 +173,7 @@
 			</li>
 			{% endif %}
 			{% EVENT overall_header_searchbox_after %}
-			{% endif %}
+		{% endif %}
 			<div class="inner">
 
 			<div id="site-description" class="site-description">

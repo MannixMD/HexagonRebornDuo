@@ -76,6 +76,7 @@
 {% INCLUDEJS 'forum_fn.js' %}
 {% INCLUDEJS 'ajax.js' %}
 
+
 <script>
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
@@ -139,26 +140,54 @@ function closeJumpbox() {
 {% endif %}
 
 {% if definition.COLORPICKER == 'yes' %}
-
 <script>
-const toggleIcon = document.querySelector("#toggle i");
+	const colorswitch = localStorage.getItem("colorpickerReborn");
+	const root = document.documentElement;
+	const siteLogo = document.querySelector(".site_logo")
+// Set the user's selection
+switch (colorswitch) {
+	case "orange":
+		root.style.setProperty("--accent-color", "#de7300");
+		break;
+	case "blue":
+		root.style.setProperty("--accent-color", "#0092de");
+		siteLogo.style.backgroundImage = `url("{T_THEME_PATH}/images/logoblue.png")`;
+		break;
+	case "green":
+		root.style.setProperty("--accent-color", "#00de1f");
+		siteLogo.style.backgroundImage = `url("{T_THEME_PATH}/images/logogreen.png")`;
+		break;
+	case "cyan":
+		root.style.setProperty("--accent-color", "#00c1de");
+		siteLogo.style.backgroundImage = `url("{T_THEME_PATH}/images/logocyan.png")`;
+		break;
+	case "violet":
+		root.style.setProperty("--accent-color", "#7d00de");
+		siteLogo.style.backgroundImage = `url("{T_THEME_PATH}/images/logoviolet.png")`;
+		break;
+	case "custom":
+		let accentColor = localStorage.getItem("accent");
+		root.style.setProperty("--accent-color", accentColor);
+		break;
+	default:
+}
+</script>
+
+{% if definition.THEMESWITCHER == 'yes'%}
+<script>
+// Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
 const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
 if (localStorage.getItem("Theme") == null) {
 
 	const setColorScheme = e => {
 	  if ( e.matches ) {
 		setDarkTheme()
-		if (toggleIcon){
-		setIconSun()
-		}
 		localStorage.setItem("Theme", 'Dark');
 		return
 	  }
 	  if ( !e.matches ) {
 		setLightTheme()
-		if (toggleIcon){
-		setIconMoon()
-		}
 		localStorage.setItem("Theme", 'Light');
 		return
 	  }
@@ -169,57 +198,56 @@ if (localStorage.getItem("Theme") == null) {
 
 }else if (localStorage.getItem("Theme") == 'Dark'){
 	setDarkTheme()
-	if (toggleIcon){
-	setIconSun()
-	}
+
 	console.log("2nd")
 
 
 }else if (localStorage.getItem("Theme") == 'Light') {
 	setLightTheme()
-	if (toggleIcon){
-	setIconMoon()
-	}
+
 	console.log("3rd")
 
 }
-
+// function to set the Dark theme
 function setDarkTheme() {
 	document.documentElement.style.setProperty("--bg-clr", '#000000');
     document.documentElement.style.setProperty("--main-clr", '#171717');
     document.documentElement.style.setProperty("--sec-clr", '#262626');
     document.documentElement.style.setProperty("--txt-clr", '#e9ebee');
     document.documentElement.style.setProperty("--extra-clr", '#101010');
-	document.querySelector(".headerbar").style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/banner.jpg")`
-	document.documentElement.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/bg.jpg")`
-	document.body.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/bg.jpg")`
+	document.querySelector(".headerbar").style.backgroundImage = `url("{T_THEME_PATH}/images/banner.jpg")`
+	document.documentElement.style.backgroundImage = `url("{T_THEME_PATH}/images/bg.jpg")`
+	document.body.style.backgroundImage = `url("{T_THEME_PATH}/images/bg.jpg")`
 	document.querySelectorAll(".no-avatar .avatar-container").forEach(avatar =>{
-		avatar.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/no_avatar.gif")`
+		avatar.style.backgroundImage = `url("{T_THEME_PATH}/images/no_avatar.gif")`
 	})
 	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`)
 	metaColorScheme.content = "Dark";
-	if(document.querySelector("#Theme")){
-		document.querySelector("#Theme").checked = "true";
-	}
+	
 }
+// function to set the Light theme 
 function setLightTheme() {
 	document.documentElement.style.setProperty("--bg-clr", '#ffffff');
     document.documentElement.style.setProperty("--main-clr", '#e8e8e8');
     document.documentElement.style.setProperty("--sec-clr", '#d9d9d9');
     document.documentElement.style.setProperty("--txt-clr", '#161411');
     document.documentElement.style.setProperty("--extra-clr", '#efefef');
-	document.querySelector(".headerbar").style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/banner-light.jpg")`
-	document.body.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/bg-light.jpg")`;
-	document.documentElement.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/bg-light.jpg")`;
+	document.querySelector(".headerbar").style.backgroundImage = `url("{T_THEME_PATH}/images/banner-light.jpg")`
+	document.body.style.backgroundImage = `url("{T_THEME_PATH}/images/bg-light.jpg")`;
+	document.documentElement.style.backgroundImage = `url("{T_THEME_PATH}/images/bg-light.jpg")`;
 	document.querySelectorAll(".no-avatar .avatar-container").forEach(avatar =>{
-		avatar.style.backgroundImage = `url("./styles/HexagonRebornAdaptive/theme/images/noavatar.gif")`
+		avatar.style.backgroundImage = `url("{T_THEME_PATH}/images/noavatar.gif")`
 	})
 	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`);
 	metaColorScheme.content = "Light";
 }
-
+	// applies accent color to radio buttons except for colorPicker
+	const radioss = document.querySelectorAll('input[type="radio"]:not([name="theme"])');
+	radioss.forEach(radio =>{
+		radio.style.accentColor = "var(--accent-color)"
+	})
 </script>
-
+{% endif %}
 {% endif %}
 {% EVENT overall_footer_after %}
 
