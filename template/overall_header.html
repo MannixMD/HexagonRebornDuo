@@ -200,7 +200,7 @@
 
 	<a id="start_here" class="anchor"></a>
 
-	<div id="page-body" class="page-body" role="main">
+	<div id="page-body" class="page-body {% if definition.SIDEBAR == 'yes'%}sidebar-body{% endif %}" role="main">
 	{% if definition.SIDEBAR == 'yes'%}
 	<div class="page-body-inner">
 	{% endif %}
