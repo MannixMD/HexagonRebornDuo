@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
+<html style="
+	--bg-clr: #000000;
+    --main-clr: #171717;
+    --sec-clr: #262626;
+    --txt-clr: #e9ebee;
+    --extra-clr: #101010;" dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#171717">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#171717">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#171717">
+<meta name="color-scheme" content="">
 {{ META }}
 <title>{{ SITENAME }} &bull; {% if S_IN_MCP %}{{ lang('MCP') }} &bull; {% elseif S_IN_UCP %}{{ lang('UCP') }} &bull; {% endif %}{{ PAGE_TITLE }}</title>
 
@@ -25,6 +37,38 @@
 {% endif %}
 <link href="{{ T_FONT_AWESOME_LINK }}" rel="stylesheet">
 <link href="{{ T_STYLESHEET_LINK }}" rel="stylesheet">
+<link href="{T_THEME_PATH}/accent.css" rel="stylesheet">
+{% INCLUDE 'options.html' %}
+	{% if definition.ACCENTCOLOR == 'orange'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#de7300");
+	</script>
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'blue'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#0092de");
+	</script>
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'green'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#00de1f");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'cyan'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#00c1de");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'violet'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#7d00de");
+	</script>	
+	{% endif %}
+	{% if definition.ACCENTCOLOR == 'custom'%}
+	<script>
+	document.documentElement.style.setProperty("--accent-color", "#de7300");
+	</script>	
+	{% endif %}
 <link href="{{ T_THEME_PATH }}/css/hexagon.css" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
 
