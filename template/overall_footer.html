@@ -79,20 +79,20 @@
 
 <script>
 function openNav() {
-    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("myNav").classList.add('open');
 }
 
 function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
+	document.getElementById("myNav").classList.remove('open');
 }
 </script>
 <script>
 function openJumpbox() {
-    document.getElementById("jumpbox-responsive").style.width = "100%";
+    document.getElementById("jumpbox-responsive").classList.add('open');
 }
 
 function closeJumpbox() {
-    document.getElementById("jumpbox-responsive").style.width = "0%";
+    document.getElementById("jumpbox-responsive").classList.remove('open');
 }
 </script>
 
