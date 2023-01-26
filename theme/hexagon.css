@@ -97,7 +97,7 @@ li#search-box {
 	padding: 5px;
 }
 
-#page-body {
+.sidebar-body {
 	float: left;
 	width: 100%;
 	margin-right: -260px;
@@ -534,16 +534,26 @@ input[name="theme"]::before {
 
 .overlay {
 	height: 100%;
-	width: 0;
 	position: fixed;
 	z-index: 10;
 	top: 0;
 	left: 0;
 	overflow-x: hidden;
 	-ms-overflow-style: none;
-	transition: 0.5s;
+	transition: transform ease-in 0.5s, opacity 0.5s ease-in;
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: top left;
+	width: 100%;
 }
-
+.open {
+	opacity: 1;
+	transform: scaleX(1);
+	width: 100%;
+}
+#jumpbox-responsive.overlay{
+	transform-origin: bottom right;
+}
 .overlay-content {
 	position: relative;
 	top: 15%;
@@ -555,7 +565,7 @@ input[name="theme"]::before {
 	padding: 8px;
 	text-decoration: none;
 	font-size: 30px;
-	color: #818181;
+	/* color: #818181; */
 	display: block;
 	transition: 0.3s;
 }
