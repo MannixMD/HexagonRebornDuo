@@ -418,10 +418,12 @@ a.responsive-tab-link.dropdown-toggle:active {
 .topic_read_locked:after,
 .topic_read_locked_mine:after,
 .contact-icon:before {
-	/* color: var(--accent-color); */
-	filter: drop-shadow(2px 2px 4px black);
+	color: var(--accent-color);
+	filter: drop-shadow(2px 2px 4px var(--main-clr));
 }
-
+.forum_unread_subforum:after {
+	/* color: var(--accent-color); */
+}
 .custombbcode {
 	background-color: var(--accent-color);
 }
