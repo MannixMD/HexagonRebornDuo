@@ -881,7 +881,7 @@ fieldset.quick-login input.inputbox {
 ---------------------------------------- */
 .inputbox {
 	background-color: var(--bg-clr);
-	box-shadow: 0 0 4px var(--bg-clr);
+	box-shadow: 0 0 4px var(--main-clr);
 	color: var(--txt-clr);
 }
 
