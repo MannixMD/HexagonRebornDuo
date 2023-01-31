@@ -175,12 +175,12 @@ ColorPickerClearCustom.addEventListener('click', function() {
 {% if definition.THEMESWITCHER == 'yes'%}
 <script>
 	// Sets Theme in LocalStorage on label click
-let radiosTheme = document.querySelectorAll(`input[name="Theme"]`);
-radiosTheme.forEach((radio) => {
-  radio.addEventListener("change", (e) => {
-    localStorage.setItem("ThemePref", e.target.id);
-  });
-});
+const ThemeSwitcher = document.querySelector('fieldset#ThemePicker');
+
+ThemeSwitcher.addEventListener('change', (e)=>{
+	localStorage.setItem("ThemePref", e.target.id);
+})
+
 // Checks Theme input base on user choice	
 if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
 document.querySelector('input[id="Dark"]').checked = "true";
