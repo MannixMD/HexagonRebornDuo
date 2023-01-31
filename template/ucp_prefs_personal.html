@@ -12,27 +12,9 @@
 	{% if ERROR %}<p class="error">{{ ERROR }}</p>{% endif %}
 	{% EVENT ucp_prefs_personal_prepend %}
 	{% if definition.COLORPICKER == 'yes' %}
-	<!--
-	<dl>
-		<dt><label>ColorPicker {{ lang('COLON') }}</label></dt>
-		<dd>	
-	<fieldset id="colorPicker">
-    	<input type="radio" name="theme" id="orange">
-    	<input type="radio" name="theme" id="blue">
-    	<input type="radio" name="theme" id="green">   
-    	<input type="radio" name="theme" id="cyan">
-    	<input type="radio" name="theme" id="violet">
-		{% if definition.CUSTOMCOLORPICKERCOLOR == 'yes' %}	
-    	<input type="radio" name="theme" id="custom">
-		{% endif %}	
-		<a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a>
-  	</fieldset>
-	</dd>
-	</dl>
-	-->
 	<dl>
 	<dt><label>Custom Color Picker {{ lang('COLON') }}</label></dt>
-	<dd><input type="color" id="accent" ><a class="clearstorage2" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
+	<dd><input type="color" id="accent" ><a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
 	</dl>
 	<dl>
 	<dt><label>Theme Switcher {{ lang('COLON') }}</label></dt>
@@ -169,8 +151,6 @@ ColorPicker.addEventListener("input", function () {
     let accentColor = ColorPicker.value;
     root.style.setProperty("--accent-color", accentColor);
     localStorage.setItem("accent", accentColor);
-	// document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
-	// document.querySelector('input[id="custom"]').style.accentColor = accentColor
   },
   false
 );
@@ -179,107 +159,18 @@ if( localStorage.getItem("accent") === null ) {
 	ColorPicker.value = "{definition.ACCENTCOLOR}";}else {
 let accentColor = localStorage.getItem("accent");
 	ColorPicker.value = accentColor;
-	// document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
-	// document.querySelector('input[id="custom"]').style.accentColor = accentColor
 }
 
 // Clears LocalStorage on trashbin click
-const ColorPickerClearCustom = document.querySelector(".clearstorage2");
+const ColorPickerClearCustom = document.querySelector(".clearstorage");
 ColorPickerClearCustom.addEventListener('click', function() {
 	localStorage.removeItem('accent');
 	window.location.reload(true);
 	});
-
-
-
 </script>
-<!--
-<script>
-	const fieldsetCP = document.querySelector('fieldset#colorPicker')
-
-fieldsetCP.addEventListener('click', (e)=>{
-	if(e.target.nodeName == 'INPUT'){
-		localStorage.setItem("colorpickerReborn", e.target.id)
-	}else if (e.target.parentElement.className == 'clearstorage'){
-		e.preventDefault()
-		localStorage.removeItem('colorpickerReborn');
-	}
-})
-// Checks input on selected color from local storage
-const lS = localStorage.getItem("colorpickerReborn");
-// console.log(lS)
-switch (lS) {
-  case "orange":
-   document.querySelector('input[id="orange"]').checked = "true";
-    break;
-  case "blue":
-   document.querySelector('input[id="blue"]').checked = "true";
-    break;
-  case "green":
-   document.querySelector('input[id="green"]').checked = "true";
-    break;
-  case "cyan":
-   document.querySelector('input[id="cyan"]').checked = "true";
-    break;
-  case "violet":
-   document.querySelector('input[id="violet"]').checked = "true";
-    break;
-  case "custom":
-   document.querySelector('input[id="custom"]').checked = "true";
-    break;
-  default:
-   document.querySelector('input[id="orange"]').checked = "true";
-}
-
-console.log(localStorage.getItem("Theme"))
-</script>
-{% if definition.ACCENTCOLOR == 'orange'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="orange"]').checked = "true";
-	 }
-</script>
-{% endif %}
-{% if definition.ACCENTCOLOR == 'blue'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="blue"]').checked = "true";
-	 }
-</script>
--->
-{% endif %}
-<!--
-{% if definition.ACCENTCOLOR == 'green'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="green"]').checked = "true";
-	 }
-</script>
-{% endif %}
-{% if definition.ACCENTCOLOR == 'violet'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="violet"]').checked = "true";
-	 }
-</script>
-{% endif %}
-{% if definition.ACCENTCOLOR == 'custom'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="custom"]').checked = "true";
-	 }
-</script>
-{% endif %}
-{% if definition.ACCENTCOLOR == 'cyan'%}
-<script>
-	if(lS == null){
-	 document.querySelector('input[id="cyan"]').checked = "true";
-	 }
-</script>
-{% endif %}
 
 {% endif %}
--->
+
 {% INCLUDE 'ucp_footer.html' %}
 {% if definition.THEMESWITCHER == 'yes'%}
 <script>

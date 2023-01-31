@@ -43,38 +43,7 @@
 <link href="{T_THEME_PATH}/accent.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
 {% INCLUDE 'options.html' %}
-<!--
-	{% if definition.ACCENTCOLOR == 'orange'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#de7300");
-	</script>
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'blue'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#0092de");
-	</script>
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'green'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#00de1f");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'cyan'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#00c1de");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'violet'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#7d00de");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'custom'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#de7300");
-	</script>	
-	{% endif %}
-	-->
+
 {% if S_ALLOW_CDN %}
 <script>
 	WebFontConfig = {
@@ -141,11 +110,6 @@ function setDarkTheme() {
 }
 // function to set the Light theme 
 function setLightTheme() {
-	// document.documentElement.style.setProperty("--bg-clr", '#ffffff');
-    // document.documentElement.style.setProperty("--main-clr", '#e8e8e8');
-    // document.documentElement.style.setProperty("--sec-clr", '#d9d9d9');
-    // document.documentElement.style.setProperty("--txt-clr", '#161411');
-    // document.documentElement.style.setProperty("--extra-clr", '#efefef');
 	document.documentElement.setAttribute('data-theme', 'light');
 	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`);
 	metaColorScheme.content = "Light";
@@ -173,43 +137,6 @@ function setLightTheme() {
 	
 </script>
 
-<!--
-	{% if definition.COLORPICKER == 'yes' %}
-<script>
-	const colorswitch = localStorage.getItem("colorpickerReborn");
-	const root = document.documentElement;
-	const siteLogo = document.querySelector(".site_logo")
-// Set the user's selection
-switch (colorswitch) {
-	case "orange":
-		root.style.setProperty("--accent-color", "#de7300");
-		root.setAttribute('data-accent', 'orange')
-		break;
-	case "blue":
-		root.style.setProperty("--accent-color", "#0092de");
-		root.setAttribute('data-accent', 'blue')
-		break;
-	case "green":
-		root.style.setProperty("--accent-color", "#00de1f");
-		root.setAttribute('data-accent', 'green')
-		break;
-	case "cyan":
-		root.style.setProperty("--accent-color", "#00c1de");
-		root.setAttribute('data-accent', 'cyan')
-		break;
-	case "violet":
-		root.style.setProperty("--accent-color", "#7d00de");
-		root.setAttribute('data-accent', 'violet')
-		break;
-	case "custom":
-		let accentColor = localStorage.getItem("accent");
-		root.style.setProperty("--accent-color", accentColor);
-		root.setAttribute('data-accent', 'custom')
-		break;
-	default:
-}
-</script>
-{% endif %}
 -->
 {% if S_CONTENT_DIRECTION eq 'rtl' %}
 	<link href="{{ T_THEME_PATH }}/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
