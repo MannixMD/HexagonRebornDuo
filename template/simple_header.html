@@ -71,7 +71,41 @@
 	{% endif %}
 <link href="{{ T_THEME_PATH }}/css/hexagon.css" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
-
+{% if definition.COLORPICKER == 'yes' %}
+<script>
+	const colorswitch = localStorage.getItem("colorpickerReborn");
+	const root = document.documentElement;
+// Set the user's selection
+switch (colorswitch) {
+	case "orange":
+		root.style.setProperty("--accent-color", "#de7300");
+		root.setAttribute('data-accent', 'orange')
+		break;
+	case "blue":
+		root.style.setProperty("--accent-color", "#0092de");
+		root.setAttribute('data-accent', 'blue')
+		break;
+	case "green":
+		root.style.setProperty("--accent-color", "#00de1f");
+		root.setAttribute('data-accent', 'green')
+		break;
+	case "cyan":
+		root.style.setProperty("--accent-color", "#00c1de");
+		root.setAttribute('data-accent', 'cyan')
+		break;
+	case "violet":
+		root.style.setProperty("--accent-color", "#7d00de");
+		root.setAttribute('data-accent', 'violet')
+		break;
+	case "custom":
+		let accentColor = localStorage.getItem("accent");
+		root.style.setProperty("--accent-color", accentColor);
+		root.setAttribute('data-accent', 'custom')
+		break;
+	default:
+}
+</script>
+{% endif %}
 {% if S_CONTENT_DIRECTION eq 'rtl' %}
 	<link href="{{ T_THEME_PATH }}/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 {% endif %}

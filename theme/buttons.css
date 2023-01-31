@@ -27,11 +27,11 @@
 
 .button:before {
 	left: 0px;
-    content: '\e800';
-    font-size: 35px;
-    font-family: hexagon;
-    top: -14px;
-    position: absolute;
+	content: '\e800';
+	font-size: 35px;
+	font-family: hexagon;
+	top: -14px;
+	position: absolute;
 }
 .button .icon, .button-secondary {
     position:relative;
@@ -62,7 +62,7 @@
 	float: left;
 	border-radius: 0;
 	margin-top: 3px;
-    padding: 1px 8px;
+	padding: 1px 8px;
 }
 
 .button-search-end {

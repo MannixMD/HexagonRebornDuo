@@ -1,273 +1,273 @@
 input#Theme:checked ~ label i.fa-moon-o {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 	transition: color ease-in 500ms;
 }
 
 input#Theme:not(:checked) ~ label i.fa-sun-o {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 	transition: color ease-in 500ms;
 }
 
 h3 {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 hr {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 a:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .forumbg .header a:hover,
 .forabg .header a:hover,
 th a:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .postlink {
-	border-bottom-color: var(--accent-color);
-	color: var(--accent-color);
+	border-bottom-color: var(--accent-color, #de7300);
+	color: var(--accent-color, #de7300);
 }
 
 .top i {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .arrow-left:hover,
 .arrow-right:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .wrap {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 ul.navlinks {
-	border-top: 1px solid var(--accent-color);
+	border-top: 1px solid var(--accent-color, #de7300);
 }
 
 table.table1 tbody th {
-	border-bottom-color: var(--accent-color);
+	border-bottom-color: var(--accent-color, #de7300);
 }
 
 dl.details dt {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .sep {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .icon.icon-red,
 a:hover .icon.icon-red {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .icon.icon-black,
 a:hover .icon.icon-black {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .jumpbox .dropdown li {
-	border-top-color: var(--accent-color);
+	border-top-color: var(--accent-color, #de7300);
 }
 
 .jumpbox-cat-link:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .jumpbox .dropdown .pointer-inner {
-	border-color: var(--accent-color) transparent;
+	border-color: var(--accent-color, #de7300) transparent;
 }
 
 .copyright {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 div.rules {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 ul.topiclist dd {
-	border-left-color: var(--accent-color);
+	border-left-color: var(--accent-color, #de7300);
 }
 
 li.row strong {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .rtl li.row:hover dd {
-	border-right-color: var(--accent-color);
+	border-right-color: var(--accent-color, #de7300);
 }
 
 .content h2,
 .panel h2 {
-	border-bottom-color: var(--accent-color);
+	border-bottom-color: var(--accent-color, #de7300);
 }
 
 dl.faq dt {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .posthilit {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 /* Post signature */
 .signature {
-	border-top-color: var(--accent-color);
+	border-top-color: var(--accent-color, #de7300);
 }
 
 /* Post noticies */
 .notice {
-	border-top-color: var(--accent-color);
+	border-top-color: var(--accent-color, #de7300);
 }
 
 /* BB Code styles
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 /* Code block */
 .codebox {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .codebox p {
-	border-bottom-color: var(--accent-color);
+	border-bottom-color: var(--accent-color, #de7300);
 }
 
 .attachbox {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .attach-image img {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 dl.thumbnail img {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 dl.thumbnail dt a:hover img {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 fieldset.polls dl {
-	border-top-color: var(--accent-color);
+	border-top-color: var(--accent-color, #de7300);
 }
 
 fieldset.polls dl.voted {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .pollbar1 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .postprofile {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .pm .postprofile {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .postprofile strong {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .online {
-	border-right: 5px solid var(--accent-color);
+	border-right: 5px solid var(--accent-color, #de7300);
 }
 
 .button:hover,
 .button:focus,
 .button:active {
-	text-shadow: 0px 0px 10px var(--accent-color);
+	text-shadow: 0px 0px 10px var(--accent-color, #de7300);
 }
 
 .button-search:hover,
 .button-search-end:hover {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .pagination li.ellipsis span {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .pagination li.active span {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .panel-container h3,
 .panel-container hr,
 .cp-menu hr {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .cp-main .pm-message {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .tabs .tab > a:hover {
-	background: var(--accent-color);
+	background: var(--accent-color, #de7300);
 }
 
 .tabs .activetab > a,
 .tabs .activetab > a:hover {
-	background-color: var(--accent-color);
-	border-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
+	border-color: var(--accent-color, #de7300);
 }
 
 .minitabs .activetab > a,
 .minitabs .activetab > a:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .responsive-tab .responsive-tab-link:before {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .responsive-tab .responsive-tab-link:hover:before {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .rtl .navigation a {
-	background: var(--accent-color);
+	background: var(--accent-color, #de7300);
 }
 
 .navigation a:hover {
-	background: var(--accent-color);
+	background: var(--accent-color, #de7300);
 }
 
 .navigation .active-subsection a {
-	background: var(--accent-color) !important;
+	background: var(--accent-color, #de7300) !important;
 }
 
 .gallery label {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 select {
-	border-color: var(--accent-color);
-	color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
+	color: var(--accent-color, #de7300);
 }
 
 fieldset dl:hover dt label {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .inputbox:hover {
-	box-shadow: 0 0 4px var(--accent-color);
+	box-shadow: 0 0 4px var(--accent-color, #de7300);
 }
 
 .inputbox:focus {
-	box-shadow: 0 0 4px var(--accent-color);
+	box-shadow: 0 0 4px var(--accent-color, #de7300);
 }
 
 a.button1,
@@ -275,19 +275,19 @@ input.button1,
 input.button3,
 a.button2,
 input.button2 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 a.button1,
 input.button1 {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 /* Alternative button */
 a.button2,
 input.button2,
 input.button3 {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 a.button1:hover,
@@ -295,230 +295,223 @@ input.button1:hover,
 a.button2:hover,
 input.button2:hover,
 input.button3:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 /* Focus states */
 input.button1:focus,
 input.button2:focus,
 input.button3:focus {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .phpbb_alert {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .dropdown-extended ul li {
-	border-top-color: var(--accent-color);
+	border-top-color: var(--accent-color, #de7300);
 }
 
 .dropdown-extended ul li:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .dropdown-extended .header,
 .dropdown-extended .footer {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .dropdown .pointer-inner {
-	border-color: var(--accent-color) transparent;
+	border-color: var(--accent-color, #de7300) transparent;
 }
 
 .dropdown-extended .pointer-inner {
-	border-color: var(--accent-color) transparent;
+	border-color: var(--accent-color, #de7300) transparent;
 }
 
 .dropdown .dropdown-contents {
-	border-top: 2px solid var(--accent-color);
+	border-top: 2px solid var(--accent-color, #de7300);
 }
 
 .dropdown-up .dropdown-contents {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .dropdown li,
 .dropdown li li {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .dropdown li.separator {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 .badge {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 /* Hex
 ---------------------------------------- */
 .dropdown-contents a:hover {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .profile-left {
-	border-color: var(--accent-color);
+	border-color: var(--accent-color, #de7300);
 }
 
 @media (max-width: 700px) {
 	.inputbox {
-		border: 1px solid var(--accent-color);
+		border: 1px solid var(--accent-color, #de7300);
 	}
 }
 .smiley-box:hover {
-	border: 1px dashed var(--accent-color);
+	border: 1px dashed var(--accent-color, #de7300);
 }
 @media (max-width: 700px) {
 	.smiley-box {
-		border: 1px dashed var(--accent-color);
+		border: 1px dashed var(--accent-color, #de7300);
 	}
 }
 .pagination .button:hover,
 .pagination .button:focus,
 .pagination .button:active {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 a.responsive-tab-link.dropdown-toggle:active {
-	border: 1px solid var(--accent-color);
+	border: 1px solid var(--accent-color, #de7300);
 }
 .header {
-	border-bottom: 4px solid var(--accent-color);
+	border-bottom: 4px solid var(--accent-color, #de7300);
 }
-.global_unread:before,
-.global_unread_mine:before,
-.announce_unread:before,
-.announce_unread_mine:before,
-.sticky_unread:before,
-.sticky_unread_mine:before,
-.global_unread_locked:before,
-.global_unread_locked_mine:before,
-.announce_unread_locked:before,
-.announce_unread_locked_mine:before,
-.forum_unread_locked:before,
-.topic_unread_locked:before,
-.topic_unread_locked_mine:before,
-.forum_link:before,
-.forum_unread:before,
-.forum_unread_subforum:before,
-.topic_unread:before,
-.topic_unread_mine:before,
-.sticky_unread_locked:before,
-.sticky_unread_locked_mine:before,
-.topic_unread_hot:before,
-.topic_unread_hot_mine:before,
-.pm_unread:before,
-.forum_read_subforum:after,
-.forum_read_locked:after,
-.global_read_locked:after,
-.global_read_locked_mine:after,
-.announce_read_locked:after,
-.announce_read_locked_mine:after,
-.sticky_read_locked:after,
-.sticky_read_locked_mine:after,
-.topic_read_locked:after,
-.topic_read_locked_mine:after,
-.contact-icon:before {
-	color: var(--accent-color);
-	filter: drop-shadow(2px 2px 4px var(--main-clr));
+.global_unread:before, .global_unread_mine:before, .announce_unread:before, .announce_unread_mine:before, .sticky_unread:before, .sticky_unread_mine:before, .global_unread_locked:before, .global_unread_locked_mine:before, .announce_unread_locked:before, .announce_unread_locked_mine:before, .forum_unread_locked:before, .topic_unread_locked:before, .topic_unread_locked_mine:before, .forum_link:before, .forum_unread:before, .forum_unread_subforum:before, .topic_unread:before, .topic_unread_mine:before, .sticky_unread_locked:before, .sticky_unread_locked_mine:before, .topic_unread_hot:before, .topic_unread_hot_mine:before, .pm_unread:before,  .forum_read_locked:after, .global_read_locked:after, .global_read_locked_mine:after, .announce_read_locked:after, .announce_read_locked_mine:after, .sticky_read_locked:after, .sticky_read_locked_mine:after, .topic_read_locked:after, .topic_read_locked_mine:after, .contact-icon:before {
+	color: var(--accent-color, #de7300);
 }
 .forum_unread_subforum:after {
-	/* color: var(--accent-color); */
+	color: var(--accent-color, #de7300);
+	filter: drop-shadow(-1px 0px var(--sec-clr))
+  drop-shadow(0px -1px var(--sec-clr)) drop-shadow(0px 1px var(--sec-clr))
+  drop-shadow(1px 0px var(--sec-clr));
 }
 .custombbcode {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 .custombbcode:hover,
 .custombbcode:active,
 .custombbcode:focus {
-	background-color: var(--accent-color);
-	box-shadow: 0 0 4px var(--accent-color);
+	background-color: var(--accent-color, #de7300);
+	box-shadow: 0 0 4px var(--accent-color, #de7300);
 }
 
 .badge:before {
-	border-bottom: 7.22px solid var(--accent-color);
+	border-bottom: 7.22px solid var(--accent-color, #de7300);
 }
 .badge:after {
-	border-top: 7.22px solid var(--accent-color);
+	border-top: 7.22px solid var(--accent-color, #de7300);
 }
 .pagination .button {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 .pagination .button:before {
-	border-bottom: 9.24px solid var(--accent-color);
+	border-bottom: 9.24px solid var(--accent-color, #de7300);
 }
 .pagination .button:after {
-	border-top: 9.24px solid var(--accent-color);
+	border-top: 9.24px solid var(--accent-color, #de7300);
 }
 .pagination li.active span {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 .row .pagination li a {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 .row .pagination li a:before {
-	border-bottom: 6.35px solid var(--accent-color);
+	border-bottom: 6.35px solid var(--accent-color, #de7300);
 }
 .row .pagination li a:after {
-	border-top: 6.35px solid var(--accent-color);
+	border-top: 6.35px solid var(--accent-color, #de7300);
 }
 .icon,
 .button .icon,
 blockquote cite:before,
 .uncited:before {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 dd input,
 dd textarea {
-	border: 1px solid var(--accent-color);
+	border: 1px solid var(--accent-color, #de7300);
 }
 
 .minitabs .tab > a:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .button:before {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 /* Adjust these colors appropriately or use the same color as above */
 .postlink:visited {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .icon.icon-orange,
 a:hover .icon.icon-orange {
-	color: var(--accent-color);
+	color: var(--accent-color, #de7300);
 }
 
 .jumpbox-cat-link {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .pollbar2 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .pollbar3 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .pollbar4 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 
 .pollbar5 {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color, #de7300);
 }
 /*----------------------------*/
-.site_logo {
+/* .site_logo {
 	background-image: url("./images/logo.png");
 }
-
-.loading_indicator {
-	background-image: url("./images/loading.gif");
+[data-accent="blue"] .site_logo {
+	background-image: url("./images/logoblue.png");
 }
+[data-accent="green"] .site_logo {
+	background-image: url("./images/logogreen.png");
+}
+[data-accent="cyan"] .site_logo {
+	background-image: url("./images/logocyan.png");
+}
+[data-accent="violet"] .site_logo {
+	background-image: url("./images/logoviolet.png");
+} */
+[data-accent="custom"] .site_logo {
+	/* 	background-image: url("./images/yourcustomlogo.png"); */
+}
+
+/* [data-accent="blue"] .loading_indicator {
+	background-image: url("./images/loadingblue.gif");
+}
+[data-accent="green"] .loading_indicator {
+	background-image: url("./images/loadinggreen.gif");
+}
+[data-accent="cyan"] .loading_indicator {
+	background-image: url("./images/loadingcyan.gif");
+}
+[data-accent="violet"] .loading_indicator {
+	background-image: url("./images/loadingviolet.gif");
+} */

@@ -12,7 +12,7 @@
 	{% if ERROR %}<p class="error">{{ ERROR }}</p>{% endif %}
 	{% EVENT ucp_prefs_personal_prepend %}
 	{% if definition.COLORPICKER == 'yes' %}
-	
+	<!--
 	<dl>
 		<dt><label>ColorPicker {{ lang('COLON') }}</label></dt>
 		<dd>	
@@ -29,6 +29,7 @@
   	</fieldset>
 	</dd>
 	</dl>
+	-->
 	<dl>
 	<dt><label>Custom Color Picker {{ lang('COLON') }}</label></dt>
 	<dd><input type="color" id="accent" ><a class="clearstorage2" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
@@ -163,22 +164,23 @@
 <script>
 // This gets the input and saves it in localStorage
 const ColorPicker = document.querySelector("#accent");
+const root = document.documentElement;
 ColorPicker.addEventListener("input", function () {
     let accentColor = ColorPicker.value;
     root.style.setProperty("--accent-color", accentColor);
     localStorage.setItem("accent", accentColor);
-	document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
-	document.querySelector('input[id="custom"]').style.accentColor = accentColor
+	// document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
+	// document.querySelector('input[id="custom"]').style.accentColor = accentColor
   },
   false
 );
 // This sets the color value for input on page load
 if( localStorage.getItem("accent") === null ) {
-	ColorPicker.value = "#ffffff";}else {
+	ColorPicker.value = "{definition.ACCENTCOLOR}";}else {
 let accentColor = localStorage.getItem("accent");
 	ColorPicker.value = accentColor;
-	document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
-	document.querySelector('input[id="custom"]').style.accentColor = accentColor
+	// document.querySelector('input[id="custom"]').style.backgroundColor = accentColor
+	// document.querySelector('input[id="custom"]').style.accentColor = accentColor
 }
 
 // Clears LocalStorage on trashbin click
@@ -190,17 +192,22 @@ ColorPickerClearCustom.addEventListener('click', function() {
 
 
 
-// Sets accent color in LocalStorage on radio click
-let radiosPicker = document.querySelectorAll(`input[name="theme"]`);
+</script>
+<!--
+<script>
+	const fieldsetCP = document.querySelector('fieldset#colorPicker')
 
-radiosPicker.forEach((radio) => {
-  radio.addEventListener("change", (e) => {
-    localStorage.setItem("colorpickerReborn", e.target.id);
-  });
-});
+fieldsetCP.addEventListener('click', (e)=>{
+	if(e.target.nodeName == 'INPUT'){
+		localStorage.setItem("colorpickerReborn", e.target.id)
+	}else if (e.target.parentElement.className == 'clearstorage'){
+		e.preventDefault()
+		localStorage.removeItem('colorpickerReborn');
+	}
+})
 // Checks input on selected color from local storage
 const lS = localStorage.getItem("colorpickerReborn");
-console.log(lS)
+// console.log(lS)
 switch (lS) {
   case "orange":
    document.querySelector('input[id="orange"]').checked = "true";
@@ -223,14 +230,8 @@ switch (lS) {
   default:
    document.querySelector('input[id="orange"]').checked = "true";
 }
-// Removes accent color from local storage
-const ColorPickerClear = document.querySelector(".clearstorage");
-ColorPickerClear.addEventListener('click', function() {
-	localStorage.removeItem('colorpickerReborn');
-	window.location.reload(true);
-	});
-console.log(localStorage.getItem("Theme"))
 
+console.log(localStorage.getItem("Theme"))
 </script>
 {% if definition.ACCENTCOLOR == 'orange'%}
 <script>
@@ -245,7 +246,9 @@ console.log(localStorage.getItem("Theme"))
 	 document.querySelector('input[id="blue"]').checked = "true";
 	 }
 </script>
+-->
 {% endif %}
+<!--
 {% if definition.ACCENTCOLOR == 'green'%}
 <script>
 	if(lS == null){
@@ -274,7 +277,9 @@ console.log(localStorage.getItem("Theme"))
 	 }
 </script>
 {% endif %}
+
 {% endif %}
+-->
 {% INCLUDE 'ucp_footer.html' %}
 {% if definition.THEMESWITCHER == 'yes'%}
 <script>
@@ -282,16 +287,23 @@ console.log(localStorage.getItem("Theme"))
 let radiosTheme = document.querySelectorAll(`input[name="Theme"]`);
 radiosTheme.forEach((radio) => {
   radio.addEventListener("change", (e) => {
-    localStorage.setItem("Theme", e.target.id);
+    localStorage.setItem("ThemePref", e.target.id);
   });
 });
 // Checks Theme input base on user choice	
-if (localStorage.getItem("Theme") == 'Dark'){
+if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
 document.querySelector('input[id="Dark"]').checked = "true";
-}else if (localStorage.getItem("Theme") == 'Light'){
+}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
+document.querySelector('input[id="Light"]').checked = "true";
+}else if (localStorage.getItem("Theme") == 'Light'&& localStorage.getItem("ThemePref") == 'Light'){
 	document.querySelector('input[id="Light"]').checked = "true";
+}else if (localStorage.getItem("Theme") == 'Light'&& localStorage.getItem("ThemePref") == 'Dark'){
+	document.querySelector('input[id="Dark"]').checked = "true";
+}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == null){
+	document.querySelector('input[id="Dark"]').checked = "true";
 }else{
-document.querySelector('input[id="Dark"]').checked = "true";	
+	document.querySelector('input[id="Light"]').checked = "true";
 }
 </script>
+
 {% endif %}

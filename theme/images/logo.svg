@@ -1,322 +1,25 @@
-<!DOCTYPE html>
-<html 
-	 dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#171717">
-<!-- Windows Phone -->
-<meta name="msapplication-navbutton-color" content="#171717">
-<!-- iOS Safari -->
-<meta name="apple-mobile-web-app-status-bar-style" content="#171717">
-<meta name="color-scheme" content="">
-{{ META }}
-<title>{% if UNREAD_NOTIFICATIONS_COUNT %}({{ UNREAD_NOTIFICATIONS_COUNT }}) {% endif %}{% if not S_VIEWTOPIC and not S_VIEWFORUM %}{{ SITENAME }} - {% endif %}{% if S_IN_MCP %}{{ lang('MCP') }} - {% elseif S_IN_UCP %}{{ lang('UCP') }} - {% endif %}{{ PAGE_TITLE }}{% if S_VIEWTOPIC or S_VIEWFORUM %} - {{ SITENAME }}{% endif %}</title>
-
-{% if S_ENABLE_FEEDS %}
-	{% if S_ENABLE_FEEDS_OVERALL %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ SITENAME }}" href="{{ path('phpbb_feed_index') }}">{% endif %}
-	{% if S_ENABLE_FEEDS_NEWS %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('FEED_NEWS') }}" href="{{ path('phpbb_feed_news') }}">{% endif %}
-	{% if S_ENABLE_FEEDS_FORUMS %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('ALL_FORUMS') }}" href="{{ path('phpbb_feed_forums') }}">{% endif %}
-	{% if S_ENABLE_FEEDS_TOPICS %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('FEED_TOPICS_NEW') }}" href="{{ path('phpbb_feed_topics') }}">{% endif %}
-	{% if S_ENABLE_FEEDS_TOPICS_ACTIVE %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('FEED_TOPICS_ACTIVE') }}" href="{{ path('phpbb_feed_topics_active') }}">{% endif %}
-	{% if S_ENABLE_FEEDS_FORUM and S_FORUM_ID %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('FORUM') }} - {{ FORUM_NAME }}" href="{{ path('phpbb_feed_forum', { forum_id : S_FORUM_ID } ) }}">{% endif %}
-	{% if S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID %}<link rel="alternate" type="application/atom+xml" title="{{ lang('FEED') }} - {{ lang('TOPIC') }} - {{ TOPIC_TITLE }}" href="{{ path('phpbb_feed_topic', { topic_id : S_TOPIC_ID } ) }}">{% endif %}
-	{% EVENT overall_header_feeds %}
-{% endif %}
-
-{% if U_CANONICAL %}
-	<link rel="canonical" href="{{ U_CANONICAL }}">
-	{% endif %}
-	
-	<!--
-		phpBB style name: HexagonReborn
-		Based on style:   prosilver (this is the default phpBB3 style)
-		Original author:  Tom Beddard ( http://www.subBlue.com/ )
-		Modified by:	  MannixMD @MannixMD
-	-->
-
-<link href="{{ T_FONT_AWESOME_LINK }}" rel="stylesheet">
-<link href="{{ T_STYLESHEET_LINK }}?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-<link href="{{ T_THEME_PATH }}/css/hexagon.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-<link href="{T_THEME_PATH}/accent.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
-{% INCLUDE 'options.html' %}
-<!--
-	{% if definition.ACCENTCOLOR == 'orange'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#de7300");
-	</script>
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'blue'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#0092de");
-	</script>
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'green'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#00de1f");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'cyan'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#00c1de");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'violet'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#7d00de");
-	</script>	
-	{% endif %}
-	{% if definition.ACCENTCOLOR == 'custom'%}
-	<script>
-	document.documentElement.style.setProperty("--accent-color", "#de7300");
-	</script>	
-	{% endif %}
-	-->
-{% if S_ALLOW_CDN %}
-<script>
-	WebFontConfig = {
-		google: {
-			families: ['Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese']
-		}
-	};
-
-	(function(d) {
-		var wf = d.createElement('script'), s = d.scripts[0];
-		wf.src = 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js';
-		wf.async = true;
-		s.parentNode.insertBefore(wf, s);
-	})(document);
-</script>
-{% endif %}
-{% if definition.THEMESWITCHER == 'yes'%}
-<script>
-// Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
-const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-
-if (localStorage.getItem("ThemePref") == null) {
-
-	const setColorScheme = e => {
-	  if ( e.matches ) {
-		setDarkTheme()
-		localStorage.setItem("Theme", 'Dark');
-		return
-	  }
-	  if ( !e.matches ) {
-		setLightTheme()
-		localStorage.setItem("Theme", 'Light');
-		return
-	  }
-	}
-	setColorScheme(colorSchemeQueryList);
-	colorSchemeQueryList.addEventListener('change', setColorScheme);
-	console.log("1st")
-
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
-	setDarkTheme()
-	// localStorage.setItem("ThemePref", 'Dark')
-	console.log("2nd")
-
-
-}else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
-	setLightTheme()
-	// localStorage.setItem("ThemePref", 'Light')
-	console.log("3rd")
-
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
-	setLightTheme();
-	console.log("4th")
-}else {
-	setDarkTheme();
-	console.log("5th")
-}
-// function to set the Dark theme
-function setDarkTheme() {
-	document.documentElement.setAttribute('data-theme', 'dark');
-	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`)
-	metaColorScheme.content = "Dark";
-
-}
-// function to set the Light theme 
-function setLightTheme() {
-	// document.documentElement.style.setProperty("--bg-clr", '#ffffff');
-    // document.documentElement.style.setProperty("--main-clr", '#e8e8e8');
-    // document.documentElement.style.setProperty("--sec-clr", '#d9d9d9');
-    // document.documentElement.style.setProperty("--txt-clr", '#161411');
-    // document.documentElement.style.setProperty("--extra-clr", '#efefef');
-	document.documentElement.setAttribute('data-theme', 'light');
-	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`);
-	metaColorScheme.content = "Light";
-}
-	// applies accent color to radio buttons except for colorPicker
-	const radioss = document.querySelectorAll('input[type="radio"]:not([name="theme"])');
-	radioss.forEach(radio =>{
-		radio.style.accentColor = "var(--accent-color)"
-	})
-</script>
-
-{% endif %}
-<script>
-	if (localStorage.getItem('accent') == null){
-		document.documentElement.style.setProperty('--accent-color', '{definition.ACCENTCOLOR}')
-		document.querySelector('meta[name="theme-color"]').content = '{definition.ACCENTCOLOR}'
-		document.querySelector('meta[name="msapplication-navbutton-color"]').content = '{definition.ACCENTCOLOR}'
-		document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = '{definition.ACCENTCOLOR}'
-	}else {
-		document.documentElement.style.setProperty('--accent-color', `${localStorage.getItem("accent")}`)
-		document.querySelector('meta[name="theme-color"]').content = localStorage.getItem("accent")	
-		document.querySelector('meta[name="msapplication-navbutton-color"]').content = localStorage.getItem("accent")	
-		document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = localStorage.getItem("accent")	
-	}
-	
-</script>
-
-<!--
-	{% if definition.COLORPICKER == 'yes' %}
-<script>
-	const colorswitch = localStorage.getItem("colorpickerReborn");
-	const root = document.documentElement;
-	const siteLogo = document.querySelector(".site_logo")
-// Set the user's selection
-switch (colorswitch) {
-	case "orange":
-		root.style.setProperty("--accent-color", "#de7300");
-		root.setAttribute('data-accent', 'orange')
-		break;
-	case "blue":
-		root.style.setProperty("--accent-color", "#0092de");
-		root.setAttribute('data-accent', 'blue')
-		break;
-	case "green":
-		root.style.setProperty("--accent-color", "#00de1f");
-		root.setAttribute('data-accent', 'green')
-		break;
-	case "cyan":
-		root.style.setProperty("--accent-color", "#00c1de");
-		root.setAttribute('data-accent', 'cyan')
-		break;
-	case "violet":
-		root.style.setProperty("--accent-color", "#7d00de");
-		root.setAttribute('data-accent', 'violet')
-		break;
-	case "custom":
-		let accentColor = localStorage.getItem("accent");
-		root.style.setProperty("--accent-color", accentColor);
-		root.setAttribute('data-accent', 'custom')
-		break;
-	default:
-}
-</script>
-{% endif %}
--->
-{% if S_CONTENT_DIRECTION eq 'rtl' %}
-	<link href="{{ T_THEME_PATH }}/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-{% endif %}
-
-{% if S_PLUPLOAD %}
-	<link href="{{ T_THEME_PATH }}/plupload.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-{% endif %}
-
-{% if S_COOKIE_NOTICE %}
-	<link href="{{ T_ASSETS_PATH }}/cookieconsent/cookieconsent.min.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-
-{% endif %}
-<script>
-
-</script>
-
-<!--[if lte IE 9]>
-	<link href="{{ T_THEME_PATH }}/tweaks.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
-<![endif]-->
-
-{% EVENT overall_header_head_append %}
-
-{{ definition.STYLESHEETS }}
-
-{% EVENT overall_header_stylesheets_after %}
-
-</head>
-
-<body id="phpbb" class="nojs notouch section-{{ SCRIPT_NAME }} {{ S_CONTENT_DIRECTION }} {{ BODY_CLASS }}">
-{% EVENT overall_header_body_before %}
-	
-<div id="wrap" class="wrap">
-{% INCLUDE 'navbar_main.html' %}
-	<a id="top" class="top-anchor" accesskey="t"></a>
-	<div id="page-header">
-		<div class="headerbar" role="banner">
-		{% EVENT overall_header_headerbar_before %}
-		{% if definition.SEARCHBAR == 'headbar'%}
-			{% EVENT overall_header_searchbox_before %}
-			
-			{% if S_DISPLAY_SEARCH and not S_IN_SEARCH %}
-			<li id="search-box" class="search-box search-header search-box-headbar">
-				<form action="{{ U_SEARCH }}" method="get" id="search">
-				<fieldset>
-					<input name="keywords" id="keywords" type="search" maxlength="128" title="{{ lang('SEARCH_KEYWORDS') }}" class="inputbox search tiny" size="20" value="{{ SEARCH_WORDS }}" placeholder="{{ lang('SEARCH_MINI') }}" />
-					<button class="button button-search" type="submit" title="{{ lang('SEARCH') }}">
-						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH') }}</span>
-					</button>
-					<a href="{{ U_SEARCH }}" class="button button-search-end" title="{{ lang('SEARCH_ADV') }}">
-						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH_ADV') }}</span>
-					</a>
-					{{ S_SEARCH_HIDDEN_FIELDS }}
-				</fieldset>
-				</form>
-			</li>
-			{% endif %}
-			{% EVENT overall_header_searchbox_after %}
-		{% endif %}
-			<div class="inner">
-
-			<div id="site-description" class="site-description">
-				<a id="logo" class="logo" href="{% if U_SITE_HOME %}{{ U_SITE_HOME }}{% else %}{{ U_INDEX }}{% endif %}" title="{% if U_SITE_HOME %}{{ L_SITE_HOME }}{% else %}{{ L_INDEX }}{% endif %}">
-					<span class="site_logo">
 <?xml version="1.0" encoding="utf-8"?>
-
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	  viewBox="0 0 500 175" enable-background="new 0 0 500 175" xml:space="preserve">
-	  <!-- <animate 
-    xlink:href="#Sm_Hex" 
-    attributename="opacity" 
-    from="1" 
-    to="0" 
-    dur="1s"  
-    fill="freeze" 
-	repeatcount="indefinite"
-    id="circ-anim">
-  </animate>
-  <animate 
-    xlink:href="#Mid_Hex" 
-    attributename="opacity" 
-    from="1" 
-    to="0" 
-    dur="1s" 
-    begin="circ-anim.begin + 1s" 
-    fill="freeze" 
-	repeatcount="indefinite"
-    id="rect-anim">
-  </animate> -->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="175px" viewBox="0 0 500 175" enable-background="new 0 0 500 175" xml:space="preserve">
 <g id="Sm_Hex">
-	<polygon fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="146,106 113,124.9 80,106 80,68.2 
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" points="146,106 113,124.9 80,106 80,68.2 
 		113,49.3 146,68.2 	"/>
-	<polygon fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="354,69 387,50.1 420,69 420,106.8 
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" points="354,69 387,50.1 420,69 420,106.8 
 		387,125.7 354,106.8 	"/>
 </g>
 <g id="Mid_Hex">
-	<polygon fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="212,115.5 162,143.9 112,115.5 
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" points="212,115.5 162,143.9 112,115.5 
 		112,58.7 162,30.3 212,58.7 	"/>
-	<polygon fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="288,59.5 338,31.1 388,59.5 388,116.3 
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" points="288,59.5 338,31.1 388,59.5 388,116.3 
 		338,144.7 288,116.3 	"/>
 </g>
-<polygon id="Big_Hex" fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="323,128.9 250,170.3 
+<polygon id="Big_Hex" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-miterlimit="10" points="323,128.9 250,170.3 
 	177,128.9 177,46.1 250,4.7 323,46.1 "/>
 <g id="Text" opacity="0.75">
 	<g>
 		<g enable-background="new    ">
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M258.5,149.8c0,0.2,0.1,0.3,0.1,0.5c0,0,0-0.2-0.1-0.3
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M258.5,149.8c0,0.2,0.1,0.3,0.1,0.5c0,0,0-0.2-0.1-0.3
 				c0,0-0.1-0.3,0-0.4V149.8z M258.6,150.7c-0.1,0-0.2-0.1,0-0.2C258.7,150.5,258.7,150.7,258.6,150.7z M258.5,147.9
 				c0,0-0.1-0.1,0-0.1C258.7,147.8,258.7,147.9,258.5,147.9z M258.6,148.9c-0.1,0-0.1-0.2-0.1-0.2
 				C258.7,148.6,258.7,148.8,258.6,148.9z M258.7,149c0,0.1,0.1,0.2,0,0.2V149L258.7,149z M258.7,145.5
@@ -621,7 +324,7 @@ switch (colorswitch) {
 				c-0.1,0-0.5,0.1-0.5,0.2C311.8,152.7,311.8,152.5,311.8,152.5z M311.9,151l-0.1-0.2C312,150.7,312.1,150.9,311.9,151z M312,150.2
 				C312,150.2,312,150.1,312,150.2C312.1,150.4,312,150.4,312,150.2z M312.4,151.7c-0.1,0-0.2-0.2-0.1-0.2
 				C312.4,151.4,312.4,151.7,312.4,151.7z M312.7,152.5c0.2,0,0.1-0.3-0.1-0.2C312.6,152.3,312.7,152.6,312.7,152.5z"/>
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M294.2,128.1c-0.2,0-0.2-0.1,0-0.2
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M294.2,128.1c-0.2,0-0.2-0.1,0-0.2
 				C294.3,127.8,294.3,128,294.2,128.1z M294.3,128.4c-0.2,0-0.2-0.1,0-0.1C294.4,128.2,294.4,128.3,294.3,128.4z M314.3,159
 				L314.3,159c-0.4,0-0.6,0-0.9,0.3v-0.1c0,0-0.2,0.2-0.3,0.2c-1.9,0.6-4.8-1.1-6.4-2.1l0.1-0.2c0,0-0.2-0.2-0.3-0.3
 				c-0.2-0.2-0.9-0.5-0.9-0.5l-0.2,0.1c-0.1-0.4-3.1-3-3.3-3c-0.1-0.2,0.1-0.4,0-0.5c-0.1-0.4-0.5-0.6-0.6-0.9h0.1
@@ -788,7 +491,7 @@ switch (colorswitch) {
 				C330.6,142.1,330.6,142.3,330.7,142.2z M331.3,141.1c0,0,0.1-0.3,0.1-0.2C331.4,141,331.4,141,331.3,141.1z M331.7,142.4l0.1-0.2
 				c0,0,0,0,0.1,0L331.7,142.4z M332.6,143.2c0,0,0,0,0.2,0l-0.1,0.3c-0.1,0-0.1,0-0.1,0l-0.2-0.1L332.6,143.2z M333,140.6
 				c0,0.2-0.3,0.5-0.5,0.5v-0.2L333,140.6z"/>
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M355.7,144.8c-0.2,0.1-0.3,0.2-0.5,0.3c-0.1,0-0.2,0.1-0.2,0.1V145
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M355.7,144.8c-0.2,0.1-0.3,0.2-0.5,0.3c-0.1,0-0.2,0.1-0.2,0.1V145
 				h-0.1c-0.3,0.1-0.5,0.2-0.8,0.5l-0.2-0.1l0.3-0.3l-0.7,0.2v-0.1l0,0l-0.3,0.2l0.2,0.1c-0.3,0.3-0.9,0.6-1.3,0.7
 				c-0.1,0-0.1,0-0.1,0l-0.2-0.1l0.1-0.2l-0.5,0.2c0.1-0.4,0.6-0.1,0.9-0.5v0.3c0,0,0,0,0.1,0c0.1-0.2,0.5-0.7,0.5-0.9l-0.2-0.1
 				c-0.2,0-0.8,0.2-0.6,0.5c-0.2,0-0.5-0.1-0.7,0c0.2-0.1,0.9-0.6,0.9-0.8c0,0-0.4,0.1-0.5,0.1c-0.3,0.1-1.4,0.4-1.5,0.7l-0.1-0.2
@@ -1177,7 +880,7 @@ switch (colorswitch) {
 				c-0.1,0-0.2-0.2-0.1-0.2C370,129.6,370.1,129.9,370,129.9z M370.3,129.1v0.2l-0.2-0.1L370.3,129.1z M370.2,128.8
 				c-0.1,0-0.1-0.1,0-0.1C370.3,128.6,370.4,128.7,370.2,128.8z M370.6,126.2l0.2,0.2c0,0,0,0,0,0.1s-0.1,0.1-0.3,0.2l-0.1-0.4
 				C370.4,126.3,370.4,126.3,370.6,126.2z"/>
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M362.6,108.7c-0.1,0-0.2-0.1,0-0.2
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M362.6,108.7c-0.1,0-0.2-0.1,0-0.2
 				C362.7,108.5,362.7,108.7,362.6,108.7z M362.7,108.9C362.6,108.7,362.7,108.7,362.7,108.9C362.8,108.9,362.7,108.9,362.7,108.9z
 				 M363,109c-0.1,0-0.1-0.1,0-0.2C363.1,108.8,363.1,108.9,363,109z M377.6,136.6c-5.5-1.7-10.9-5.8-12.5-11.5
 				c-0.1-0.2-0.4-1.5-0.5-1.7c-0.2-1.5,0.4-3.7,0-5.3c-0.1-0.2-0.5-0.2-0.6-0.2l0.7-0.2c0.7-4.6,4.6-6.4,5.3-9.1l-0.7,0.2v-0.1
@@ -1358,7 +1061,7 @@ switch (colorswitch) {
 				S397.9,113.1,398,113.1z M398.1,116.2c0.1,0,0.1-0.2-0.1-0.2C397.9,116.1,398,116.3,398.1,116.2z M398.4,114.6
 				c-0.1,0-0.2-0.2-0.1-0.2C398.5,114.3,398.6,114.6,398.4,114.6z M398.5,113.6c-0.1,0-0.2-0.2-0.1-0.2
 				C398.6,113.4,398.6,113.6,398.5,113.6z"/>
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M390.8,111c0,0.2,0.1,0.3,0.1,0.5c0,0,0-0.2-0.1-0.3
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M390.8,111c0,0.2,0.1,0.3,0.1,0.5c0,0,0-0.2-0.1-0.3
 				c0,0-0.1-0.3,0-0.4V111z M390.9,111.9c-0.1,0-0.2-0.1,0-0.2C390.9,111.7,391,111.9,390.9,111.9z M390.8,109.2
 				C390.8,109.2,390.7,109.1,390.8,109.2C391,109,391,109.1,390.8,109.2z M390.9,110.1c-0.1,0-0.1-0.2-0.1-0.2
 				C391,109.8,391,110,390.9,110.1z M390.9,110.2c0,0.1,0.1,0.2,0,0.2V110.2L390.9,110.2z M391,106.7
@@ -1664,7 +1367,7 @@ switch (colorswitch) {
 				C444.3,112,444.3,112.2,444.2,112.2z M444.3,111.5C444.3,111.4,444.3,111.4,444.3,111.5C444.4,111.6,444.3,111.6,444.3,111.5z
 				 M444.7,112.9c-0.1,0-0.2-0.2-0.1-0.2C444.7,112.6,444.7,112.9,444.7,112.9z M445,113.8c0.2,0,0.1-0.3-0.1-0.2
 				C444.9,113.5,445,113.8,445,113.8z"/>
-			<path fill="none" stroke="var(--txt-clr)" stroke-miterlimit="10" d="M458.1,112.7c0,0.2,0,0.4-0.1,0.4c-0.2,0.1-0.7-0.3-0.8-0.1
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M458.1,112.7c0,0.2,0,0.4-0.1,0.4c-0.2,0.1-0.7-0.3-0.8-0.1
 				l-0.5-0.6l0,0c0.1,0.2,0.2,0.5,0.3,0.8c-0.2,0.1-0.8-0.5-1.2-0.6c0,0.2-0.1,0.2-0.1,0.4c-0.6-1.7-2.6-4.8-3.5-6.3
 				c-0.2-0.3-6.5-3-8.2-3.9c-0.1-0.1-1.1-0.6-1.5-0.7c-0.1,0-0.1,0-0.1,0l-0.1,0.1c0.3,1.1,0.8,2.2,1.1,3.2c0.3,1,0.5,1.9,0.7,2.9
 				c-0.2,0.1-0.4,0.2-0.3,0.5l0.2-0.1v0.1v0.3c-0.3-0.2-0.4-0.2-0.7-0.1c-0.2,0.1,0,0.3-0.1,0.3s-0.1,0-0.1,0l-0.2-0.1l-0.1,0.2
@@ -1923,40 +1626,3 @@ switch (colorswitch) {
 	</g>
 </g>
 </svg>
-
-					</span>
-				</a>				<h1>{{ SITENAME }}</h1>
-				<p class="site-des">{{ SITE_DESCRIPTION }}</p>
-				<p class="skiplink"><a href="#start_here">{{ lang('SKIP') }}</a></p>
-			</div>
-			
-			</div>
-			{% EVENT overall_header_headerbar_after %}
-			
-		</div>
-		
-		{% EVENT overall_header_navbar_before %}
-		{% INCLUDE 'navbar_bread.html' %}
-			   {% if definition.SOCIALBUTTONS == 'yes'%}
-	{% INCLUDE 'socialbuttons.html' %}
-	{% endif %}
-	</div>
-
-	{% EVENT overall_header_page_body_before %}
-
-	<a id="start_here" class="anchor"></a>
-
-	<div id="page-body" class="page-body {% if definition.SIDEBAR == 'yes'%}sidebar-body{% endif %}" role="main">
-	{% if definition.SIDEBAR == 'yes'%}
-	<div class="page-body-inner">
-	{% endif %}
-
-		{% if S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) %}
-		<div id="information" class="rules">
-			<div class="inner">
-				<strong>{{ lang('INFORMATION') }}{{ lang('COLON') }}</strong> {{ lang('BOARD_DISABLED') }}
-			</div>
-		</div>
-		{% endif %}
-
-		{% EVENT overall_header_content_before %}

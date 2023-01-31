@@ -78,7 +78,7 @@ th a {
 	background-color: var(--sec-clr);
 	color: var(--txt-clr);
 	border-radius: 0px;
-	background: url(./images/banner.jpg) no-repeat;
+	background-repeat: no-repeat;
 	margin-top: 1px;
 	background-position: top center;
 	padding-bottom: 12px;
@@ -285,7 +285,7 @@ li.reported:hover {
 
 div.rules {
 	color: var(--main-clr);
-	box-shadow: 0 0 4px var(--bg-clr);
+	box-shadow: 0 0 4px var(--main-clr);
 }
 
 p.post-notice {

@@ -171,8 +171,8 @@
 		display: none;
 	}
 	
-	.site_logo {
-		height: 80px;
+	.site_logo svg {
+		/* height: 80px; */
 	}
 	
 	/* Navigation
