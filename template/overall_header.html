@@ -85,13 +85,11 @@ if (localStorage.getItem("ThemePref") == null) {
 
 }else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
 	setDarkTheme()
-	// localStorage.setItem("ThemePref", 'Dark')
 	console.log("2nd")
 
 
 }else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
 	setLightTheme()
-	// localStorage.setItem("ThemePref", 'Light')
 	console.log("3rd")
 
 }else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
@@ -137,7 +135,7 @@ function setLightTheme() {
 	
 </script>
 
--->
+
 {% if S_CONTENT_DIRECTION eq 'rtl' %}
 	<link href="{{ T_THEME_PATH }}/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 {% endif %}
@@ -205,27 +203,6 @@ function setLightTheme() {
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 500 175" enable-background="new 0 0 500 175" xml:space="preserve">
-	  <!-- <animate 
-    xlink:href="#Sm_Hex" 
-    attributename="opacity" 
-    from="1" 
-    to="0" 
-    dur="1s"  
-    fill="freeze" 
-	repeatcount="indefinite"
-    id="circ-anim">
-  </animate>
-  <animate 
-    xlink:href="#Mid_Hex" 
-    attributename="opacity" 
-    from="1" 
-    to="0" 
-    dur="1s" 
-    begin="circ-anim.begin + 1s" 
-    fill="freeze" 
-	repeatcount="indefinite"
-    id="rect-anim">
-  </animate> -->
 <g id="Sm_Hex">
 	<polygon fill="var(--sec-clr)" stroke="var(--accent-color)" stroke-width="6" stroke-miterlimit="10" points="146,106 113,124.9 80,106 80,68.2 
 		113,49.3 146,68.2 	"/>

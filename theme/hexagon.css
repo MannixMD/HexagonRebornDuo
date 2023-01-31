@@ -196,6 +196,10 @@ dl.panel {
 .caret .icon {
 	font-size: 10px;
 }
+.site_logo {
+	/* uncomment line below if you want to use your own image logo */
+	/* background-image: url(./images/logo.png); */
+}
 
 .site-des {
 	display: none;
