@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html 
-	 dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
+<html dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +59,7 @@
 	})(document);
 </script>
 {% endif %}
-{% if definition.THEMESWITCHER == 'yes'%}
+
 <script>
 // Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
 const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
@@ -81,23 +80,14 @@ if (localStorage.getItem("ThemePref") == null) {
 	}
 	setColorScheme(colorSchemeQueryList);
 	colorSchemeQueryList.addEventListener('change', setColorScheme);
-	console.log("1st")
-
 }else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
 	setDarkTheme()
-	console.log("2nd")
-
-
 }else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
 	setLightTheme()
-	console.log("3rd")
-
 }else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
 	setLightTheme();
-	console.log("4th")
 }else {
 	setDarkTheme();
-	console.log("5th")
 }
 // function to set the Dark theme
 function setDarkTheme() {
@@ -113,10 +103,7 @@ function setLightTheme() {
 	metaColorScheme.content = "Light";
 }
 	
-</script>
 
-{% endif %}
-<script>
 	if (localStorage.getItem('accent') == null){
 		document.documentElement.style.setProperty('--accent-color', '{definition.ACCENTCOLOR}')
 		document.querySelector('meta[name="theme-color"]').content = '{definition.ACCENTCOLOR}'
@@ -144,9 +131,6 @@ function setLightTheme() {
 	<link href="{{ T_ASSETS_PATH }}/cookieconsent/cookieconsent.min.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 
 {% endif %}
-<script>
-
-</script>
 
 <!--[if lte IE 9]>
 	<link href="{{ T_THEME_PATH }}/tweaks.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">

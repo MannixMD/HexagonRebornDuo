@@ -16,6 +16,8 @@
 	<dt><label>Custom Color Picker {{ lang('COLON') }}</label></dt>
 	<dd><input type="color" id="accent" ><a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
 	</dl>
+	{% endif %}
+	{% if definition.THEMESWITCHER == 'yes' %}	
 	<dl>
 	<dt><label>Theme Switcher {{ lang('COLON') }}</label></dt>
 	<dd>
@@ -31,8 +33,6 @@
 		</fieldset>
 	</dd>
 	</dl>
-
-	
 	{% endif %}
 	<dl>
 		<dt><label for="viewemail0">{{ lang('SHOW_EMAIL') }}{{ lang('COLON') }}</label></dt>
@@ -172,7 +172,7 @@ ColorPickerClearCustom.addEventListener('click', function() {
 {% endif %}
 
 {% INCLUDE 'ucp_footer.html' %}
-{% if definition.THEMESWITCHER == 'yes'%}
+{% if definition.THEMESWITCHER == 'yes' %}	
 <script>
 	// Sets Theme in LocalStorage on label click
 const ThemeSwitcher = document.querySelector('fieldset#ThemePicker');
@@ -196,5 +196,5 @@ document.querySelector('input[id="Light"]').checked = "true";
 	document.querySelector('input[id="Light"]').checked = "true";
 }
 </script>
-
 {% endif %}
+

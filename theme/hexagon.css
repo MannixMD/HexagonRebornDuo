@@ -1119,63 +1119,6 @@ html[data-theme="dark"],
 html[data-theme="light"],
 [data-theme="light"] body {
 	background-image: url("./images/bg-light.jpg");
-	/* background: radial-gradient(
-				circle farthest-side at 0% 50%,
-				var(--honeyColor) 23.5%,
-				transparent 0
-			)
-			calc(var(--size) * 0.7) var(--size),
-		radial-gradient(
-				circle farthest-side at 0% 50%,
-				var(--honeyBorderColor) 24%,
-				transparent 0
-			)
-			calc(var(--size) * 19 / 30) var(--size),
-		linear-gradient(
-				var(--honeyColor) 14%,
-				transparent 0,
-				transparent 85%,
-				var(--honeyColor) 0
-			)
-			0 0,
-		linear-gradient(
-				150deg,
-				var(--honeyColor) 24%,
-				var(--honeyBorderColor) 0,
-				var(--honeyBorderColor) 26%,
-				transparent 0,
-				transparent 74%,
-				var(--honeyBorderColor) 0,
-				var(--honeyBorderColor) 76%,
-				var(--honeyColor) 0
-			)
-			0 0,
-		linear-gradient(
-				30deg,
-				var(--honeyColor) 24%,
-				var(--honeyBorderColor) 0,
-				var(--honeyBorderColor) 26%,
-				transparent 0,
-				transparent 74%,
-				var(--honeyBorderColor) 0,
-				var(--honeyBorderColor) 76%,
-				var(--honeyColor) 0
-			)
-			0 0,
-		linear-gradient(
-				90deg,
-				var(--honeyBorderColor) 2%,
-				var(--honeyColor) 0,
-				var(--honeyColor) 98%,
-				var(--honeyBorderColor) 0%
-			)
-			0 0 var(--honeyColor); */
-	/* background-size: calc(var(--size) * 4 / 3) calc(var(--size) * 2); */
-	/* --honeyColor:
-	var(--extra-clr); */
-	/* --honeyBorderColor:
-	var(--accent-color); */
-	/* --size: 17px; */
 }
 [data-theme="light"] .headerbar {
 	background-image: url("./images/banner-light.jpg");

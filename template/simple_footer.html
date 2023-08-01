@@ -43,78 +43,7 @@
 
 <!-- EVENT simple_footer_after -->
 
-{% if definition.THEMESWITCHER == 'yes'%}
-<script>
-// Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
-const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
 
-if (localStorage.getItem("ThemePref") == null) {
-
-	const setColorScheme = e => {
-	  if ( e.matches ) {
-		setDarkTheme()
-		localStorage.setItem("Theme", 'Dark');
-		return
-	  }
-	  if ( !e.matches ) {
-		setLightTheme()
-		localStorage.setItem("Theme", 'Light');
-		return
-	  }
-	}
-	setColorScheme(colorSchemeQueryList);
-	colorSchemeQueryList.addEventListener('change', setColorScheme);
-	console.log("1st")
-
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
-	setDarkTheme()
-	// localStorage.setItem("ThemePref", 'Dark')
-	console.log("2nd")
-
-
-}else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
-	setLightTheme()
-	// localStorage.setItem("ThemePref", 'Light')
-	console.log("3rd")
-
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
-	setLightTheme();
-	console.log("4th")
-}else {
-	setDarkTheme();
-	console.log("5th")
-}
-// function to set the Dark theme
-function setDarkTheme() {
-	document.documentElement.style.setProperty("--bg-clr", '#000000');
-    document.documentElement.style.setProperty("--main-clr", '#171717');
-    document.documentElement.style.setProperty("--sec-clr", '#262626');
-    document.documentElement.style.setProperty("--txt-clr", '#e9ebee');
-    document.documentElement.style.setProperty("--extra-clr", '#101010');
-	document.documentElement.setAttribute('data-theme', 'dark');
-	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`)
-	metaColorScheme.content = "Dark";
-	
-}
-// function to set the Light theme 
-function setLightTheme() {
-	document.documentElement.style.setProperty("--bg-clr", '#ffffff');
-    document.documentElement.style.setProperty("--main-clr", '#e8e8e8');
-    document.documentElement.style.setProperty("--sec-clr", '#d9d9d9');
-    document.documentElement.style.setProperty("--txt-clr", '#161411');
-    document.documentElement.style.setProperty("--extra-clr", '#efefef');
-	document.documentElement.setAttribute('data-theme', 'light');
-	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`);
-	metaColorScheme.content = "Light";
-}
-	// applies accent color to radio buttons except for colorPicker
-	const radioss = document.querySelectorAll('input[type="radio"]:not([name="theme"])');
-	radioss.forEach(radio =>{
-		radio.style.accentColor = "var(--accent-color)"
-	})
-</script>
-
-{% endif %}
 
 {$SCRIPTS}
 
