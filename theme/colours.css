@@ -879,6 +879,10 @@ fieldset.quick-login input.inputbox {
 
 /* Input field styles
 ---------------------------------------- */
+input {
+	accent-color: var(--accent-color);
+}
+
 .inputbox {
 	background-color: var(--bg-clr);
 	box-shadow: 0 0 4px var(--main-clr);
@@ -1205,5 +1209,3 @@ a.button.button-icon-only.hexagonbutton {
 .rules a {
 	color: var(--bg-clr);
 }
-
-
