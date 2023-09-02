@@ -197,8 +197,7 @@ dl.panel {
 	font-size: 10px;
 }
 .site_logo {
-	/* uncomment line below if you want to use your own image logo */
-	/* background-image: url(./images/logo.png); */
+	background-image: url(./images/logo.png);
 }
 
 .site-des {

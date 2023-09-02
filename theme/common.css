@@ -180,18 +180,15 @@ a:hover {
 	max-width: 500px;
 	display: block;
 	margin: 0 auto;
-	/* uncomment lines below if you want to use your own image logo */
-	/* height: 175px; */
-	/* background-size: contain; */
-	/* background-repeat: no-repeat; */
-	/* background-position: center; */
+	height: 175px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
-.site_logo svg {
+.logo svg {
 	max-width: 500px;
 	display: block;
 	margin: 0 auto;
-	/* uncomment line below if you want to use your own image logo */
-	/* display: none; */
 }
 
 /* Site description and logo */
