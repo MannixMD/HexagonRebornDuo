@@ -340,7 +340,7 @@
 				<a href="{{ postrow.U_MCP_REPORT }}"><i class="icon fa-exclamation fa-fw icon-red" aria-hidden="true"></i><strong>{{ lang('POST_REPORTED') }}</strong></a>
 			</p>
 			{% endif %}
-
+			{% EVENT viewtopic_body_postrow_content_before %}
 			<div class="content">{{ postrow.MESSAGE }}</div>
 				{% EVENT viewtopic_body_postrow_content_after %}
 			{% if postrow.S_HAS_ATTACHMENTS %}
