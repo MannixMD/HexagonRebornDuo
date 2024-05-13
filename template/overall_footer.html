@@ -13,7 +13,7 @@
 	<div class="copyright">
 		{% EVENT overall_footer_copyright_prepend %}
 		<br><strong><span>*</span>{T_THEME_NAME} style by <a href="https://twitter.com/MannixMD">MannixMD</a></strong>	
-		<br><strong><span>*</span>Style Version: 3.3.2</strong>	
+		<br><strong><span>*</span>Style Version: 3.3.12</strong>	
 		<p class="footer-row">
 			<span class="footer-copyright">{{ CREDIT_LINE }}</span>
 		</p>
@@ -72,7 +72,7 @@
 </div>
 
 <script src="{{ T_JQUERY_LINK }}"></script>
-{% if S_ALLOW_CDN %}<script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery-3.6.0.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script>{% endif %}
+<!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery-3.7.1.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
 <script src="{{ T_ASSETS_PATH }}/javascript/core.js?assets_version={{ T_ASSETS_VERSION }}"></script>
 {% INCLUDEJS 'forum_fn.js' %}
 {% INCLUDEJS 'ajax.js' %}

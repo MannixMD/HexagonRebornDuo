@@ -98,7 +98,7 @@
 	{% if not S_SHOW_DRAFTS and not definition.SIG_EDIT eq 1 %}
 	<div class="panel bg3">
 		<div class="inner">
-		<fieldset class="submit-buttons">
+		<fieldset class="submit-buttons" data-prevent-flood>
 			{{ S_HIDDEN_ADDRESS_FIELD }}
 			{{ S_HIDDEN_FIELDS }}
 			{% EVENT posting_editor_submit_buttons %}
