@@ -62,7 +62,7 @@
 
 <script>
 // Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
-const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
 
 if (localStorage.getItem("ThemePref") == null) {
 

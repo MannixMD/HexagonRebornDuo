@@ -181,6 +181,7 @@ ThemeSwitcher.addEventListener('change', (e)=>{
 	localStorage.setItem("ThemePref", e.target.id);
 })
 
+
 // Checks Theme input base on user choice	
 if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
 document.querySelector('input[id="Dark"]').checked = "true";
@@ -195,6 +196,23 @@ document.querySelector('input[id="Light"]').checked = "true";
 }else{
 	document.querySelector('input[id="Light"]').checked = "true";
 }
+
+if (localStorage.getItem("ThemePref") == null) {
+
+	const setColorScheme = e => {
+	  if ( e.matches ) {
+document.querySelector('input[id="Dark"]').checked = "true";
+		return
+	  }
+	  if ( !e.matches ) {
+	  document.querySelector('input[id="Light"]').checked = "true";
+		return
+	  }
+	}
+	setColorScheme(colorSchemeQueryList);
+	colorSchemeQueryList.addEventListener('change', setColorScheme);
+}
+
 </script>
 {% endif %}
 
