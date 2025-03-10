@@ -92,6 +92,61 @@
 	--accent-color: #de7300;
 }
 
+html[data-theme="dark"],
+[data-theme="dark"] body {
+	background-image: url("./images/bg.jpg");
+	--s: 16px;
+	--c: #0000, hsl(0deg 0% 15% / 50%)
+		/* first color */
+		.5deg 119.5deg, #0000 120deg;
+	--g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0 0% 9% / 1);
+	background-size: calc(2* var(--s)) calc(3.46* var(--s));
+}
+
+[data-theme="dark"] .headerbar {
+	/* background-image: url("./images/banner.jpg"); */
+	background-image: linear-gradient(45deg, var(--sec-clr), var(--main-clr));
+}
+
+[data-theme="dark"] .no-avatar .avatar-container {
+	background-image: url("./images/no_avatar.gif");
+}
+
+
+html[data-theme="light"],
+[data-theme="light"] body {
+	background-image: url("./images/bg-light.jpg");
+	--s: 16px;
+	--c: #0000, hsl(0deg 0% 90.98% / 50%)
+		/* first color */
+		.5deg 119.5deg, #0000 120deg;
+	--g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0deg 0% 85.1%);
+	background-size: calc(2* var(--s)) calc(3.46* var(--s));
+}
+
+[data-theme="light"] .headerbar {
+	background-image: url("./images/banner-light.jpg");
+	background-image: linear-gradient(45deg, var(--bg-clr), var(--extra-clr));
+}
+
+[data-theme="light"] .no-avatar .avatar-container {
+	background-image: url("./images/noavatar.gif");
+}
+
+.loading_indicator {
+	background-image: url("./images/loading.gif");
+}
+
+[data-theme="light"] .loading_indicator {
+	background-image: url("./images/loadinglight.gif");
+}
+
 /*
 --------------------------------------------------------------
 Style oriented edits
@@ -1251,59 +1306,4 @@ input[type="color"] {
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
-}
-
-html[data-theme="dark"],
-[data-theme="dark"] body {
-	background-image: url("./images/bg.jpg");
-	--s: 16px;
-	--c: #0000, hsl(0deg 0% 15% / 50%)
-		/* first color */
-		.5deg 119.5deg, #0000 120deg;
-	--g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
-	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
-	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
-	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0 0% 9% / 1);
-	background-size: calc(2* var(--s)) calc(3.46* var(--s));
-}
-
-[data-theme="dark"] .headerbar {
-	/* background-image: url("./images/banner.jpg"); */
-	background-image: linear-gradient(45deg, var(--sec-clr), var(--main-clr));
-}
-
-[data-theme="dark"] .no-avatar .avatar-container {
-	background-image: url("./images/no_avatar.gif");
-}
-
-
-html[data-theme="light"],
-[data-theme="light"] body {
-	background-image: url("./images/bg-light.jpg");
-	--s: 16px;
-	--c: #0000, hsl(0deg 0% 90.98% / 50%)
-		/* first color */
-		.5deg 119.5deg, #0000 120deg;
-	--g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
-	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
-	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
-	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0deg 0% 85.1%);
-	background-size: calc(2* var(--s)) calc(3.46* var(--s));
-}
-
-[data-theme="light"] .headerbar {
-	background-image: url("./images/banner-light.jpg");
-	background-image: linear-gradient(45deg, var(--bg-clr), var(--extra-clr));
-}
-
-[data-theme="light"] .no-avatar .avatar-container {
-	background-image: url("./images/noavatar.gif");
-}
-
-.loading_indicator {
-	background-image: url("./images/loading.gif");
-}
-
-[data-theme="light"] .loading_indicator {
-	background-image: url("./images/loadinglight.gif");
 }
