@@ -5,7 +5,6 @@
 		--sec-clr: #262626;
 		--txt-clr: #e9ebee;
 		--extra-clr: #101010;
-		--accent-color: #de7300;
 	}
 
 	html,
@@ -20,6 +19,7 @@
 		--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 		background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0 0% 9% / 1);
 		background-size: calc(2* var(--s)) calc(3.46* var(--s));
+		color-scheme: dark;
 	}
 
 	.no-avatar .avatar-container {
@@ -43,7 +43,6 @@
 		--sec-clr: #d9d9d9;
 		--txt-clr: #161411;
 		--extra-clr: #efefef;
-		--accent-color: #de7300;
 	}
 
 	html,
@@ -58,6 +57,7 @@
 		--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 		background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0deg 0% 85.1%);
 		background-size: calc(2* var(--s)) calc(3.46* var(--s));
+		color-scheme: light;
 	}
 
 	.headerbar {
@@ -80,7 +80,6 @@
 	--sec-clr: #262626;
 	--txt-clr: #e9ebee;
 	--extra-clr: #101010;
-	--accent-color: #de7300;
 }
 
 [data-theme="light"] {
@@ -89,7 +88,6 @@
 	--sec-clr: #d9d9d9;
 	--txt-clr: #161411;
 	--extra-clr: #efefef;
-	--accent-color: #de7300;
 }
 
 html[data-theme="dark"],

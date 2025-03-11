@@ -42,7 +42,9 @@
 <link href="{T_THEME_PATH}/accent.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:normal,bold" />
 {% INCLUDE 'options.html' %}
-
+<style>
+	:root{--accent-color: {definition.ACCENTCOLOR}}
+</style>
 {% if S_ALLOW_CDN %}
 <script>
 	WebFontConfig = {
@@ -104,12 +106,7 @@ function setLightTheme() {
 }
 	
 
-	if (localStorage.getItem('accent') == null){
-		document.documentElement.style.setProperty('--accent-color', '{definition.ACCENTCOLOR}')
-		document.querySelector('meta[name="theme-color"]').content = '{definition.ACCENTCOLOR}'
-		document.querySelector('meta[name="msapplication-navbutton-color"]').content = '{definition.ACCENTCOLOR}'
-		document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = '{definition.ACCENTCOLOR}'
-	}else {
+	if (localStorage.getItem('accent')){
 		document.documentElement.style.setProperty('--accent-color', `${localStorage.getItem("accent")}`)
 		document.querySelector('meta[name="theme-color"]').content = localStorage.getItem("accent")	
 		document.querySelector('meta[name="msapplication-navbutton-color"]').content = localStorage.getItem("accent")	
