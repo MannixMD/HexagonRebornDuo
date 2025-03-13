@@ -742,20 +742,6 @@ fieldset#ThemePicker input {
 	}
 }
 
-.format-buttons .icon {
-	top: -2px;
-	left: -1px;
-}
-
-.format-buttons .button:before {
-	font-size: 30px;
-}
-
-.post-buttons .button {
-	width: 35px;
-	top: 3px;
-}
-
 .quickmod .button .icon,
 .topic-tools .button .icon {
 	left: 3px;
@@ -952,33 +938,22 @@ a.nav-avatar img {
 
 .badge {
 	position: relative;
-	width: 24px;
-	height: 14.43px;
-	margin: 4.22px 2px;
+	width: 25px;
 	opacity: 1;
 	padding: 0;
-	top: 1px;
-	line-height: 1.5;
+	top: 5px;
+	isolation: isolate;
+	font-size: .8rem;
 }
 
-.badge:before {
-	bottom: 100%;
+.badge::before {
+	content: "\e800";
+	font-size: 25px;
 	left: 0;
-}
-
-.badge:before,
-.badge:after {
-	content: "";
 	position: absolute;
-	width: 0;
-	border-left: 12.5px solid transparent;
-	border-right: 12.5px solid transparent;
-}
-
-.badge:after {
-	top: 100%;
-	width: 0;
-	left: 0;
+	font-family: hexagon;
+	top: -6px;
+	z-index: -1;
 }
 
 .badge a {
@@ -993,82 +968,7 @@ a.nav-avatar img {
 }
 
 .pagination .button {
-	margin-right: 0;
-	float: none;
-	position: relative;
-	width: 32px;
-	height: 18.48px;
-	margin: 0;
-	opacity: 1;
-	padding: 0;
-	top: 1px;
-	line-height: 1.4;
-}
-
-.pagination .button:before {
-	bottom: 100%;
-	left: 0;
-}
-
-.pagination .button:before,
-.pagination .button:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 16px solid transparent;
-	border-right: 16px solid transparent;
-}
-
-.pagination .button:after {
-	top: 100%;
-	width: 0;
-	left: 0;
-}
-
-.pagination .arrow a {
-	padding: 0;
-	line-height: 1.6;
-}
-
-.pagination .active {
-	margin-right: 0;
-	float: none;
-	position: relative;
-	width: 32px;
-	height: 18.48px;
-	margin: 0;
-	opacity: 1;
-	padding: 0;
-	top: 1px;
-	line-height: 1.3;
-}
-
-.pagination .active:before {
-	bottom: 100%;
-	left: 0;
-}
-
-.pagination .active:before,
-.pagination .active:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 16px solid transparent;
-	border-right: 16px solid transparent;
-}
-
-.pagination .active:after {
-	top: 100%;
-	width: 0;
-	left: 0;
-}
-
-.pagination li.active span {
-	background: transparent;
-	border: none;
-	padding: 0;
-	width: 32px;
-	height: 18.48px;
+	isolation: isolate;
 }
 
 .row .pagination li a {

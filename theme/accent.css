@@ -1,9 +1,9 @@
-input#Theme:checked ~ label i.fa-moon-o {
+input#Theme:checked~label i.fa-moon-o {
 	color: var(--accent-color, #de7300);
 	transition: color ease-in 500ms;
 }
 
-input#Theme:not(:checked) ~ label i.fa-sun-o {
+input#Theme:not(:checked)~label i.fa-sun-o {
 	color: var(--accent-color, #de7300);
 	transition: color ease-in 500ms;
 }
@@ -200,9 +200,6 @@ fieldset.polls dl.voted {
 	color: var(--accent-color, #de7300);
 }
 
-.pagination li.active span {
-	border-color: var(--accent-color, #de7300);
-}
 
 .panel-container h3,
 .panel-container hr,
@@ -214,18 +211,18 @@ fieldset.polls dl.voted {
 	border-color: var(--accent-color, #de7300);
 }
 
-.tabs .tab > a:hover {
+.tabs .tab>a:hover {
 	background: var(--accent-color, #de7300);
 }
 
-.tabs .activetab > a,
-.tabs .activetab > a:hover {
+.tabs .activetab>a,
+.tabs .activetab>a:hover {
 	background-color: var(--accent-color, #de7300);
 	border-color: var(--accent-color, #de7300);
 }
 
-.minitabs .activetab > a,
-.minitabs .activetab > a:hover {
+.minitabs .activetab>a,
+.minitabs .activetab>a:hover {
 	background-color: var(--accent-color, #de7300);
 }
 
@@ -347,9 +344,10 @@ input.button3:focus {
 	border-color: var(--accent-color, #de7300);
 }
 
-.badge {
-	background-color: var(--accent-color, #de7300);
+.badge::before {
+	color: var(--accent-color, #de7300);
 }
+
 /* Hex
 ---------------------------------------- */
 .dropdown-contents a:hover {
@@ -365,37 +363,71 @@ input.button3:focus {
 		border: 1px solid var(--accent-color, #de7300);
 	}
 }
+
 .smiley-box:hover {
 	border: 1px dashed var(--accent-color, #de7300);
 }
+
 @media (max-width: 700px) {
 	.smiley-box {
 		border: 1px dashed var(--accent-color, #de7300);
 	}
 }
-.pagination .button:hover,
-.pagination .button:focus,
-.pagination .button:active {
-	background-color: var(--accent-color, #de7300);
-}
+
+
 a.responsive-tab-link.dropdown-toggle:active {
 	border: 1px solid var(--accent-color, #de7300);
 }
+
 .header {
 	border-bottom: 4px solid var(--accent-color, #de7300);
 }
-.global_unread:before, .global_unread_mine:before, .announce_unread:before, .announce_unread_mine:before, .sticky_unread:before, .sticky_unread_mine:before, .global_unread_locked:before, .global_unread_locked_mine:before, .announce_unread_locked:before, .announce_unread_locked_mine:before, .forum_unread_locked:before, .topic_unread_locked:before, .topic_unread_locked_mine:before, .forum_link:before, .forum_unread:before, .forum_unread_subforum:before, .topic_unread:before, .topic_unread_mine:before, .sticky_unread_locked:before, .sticky_unread_locked_mine:before, .topic_unread_hot:before, .topic_unread_hot_mine:before, .pm_unread:before,  .forum_read_locked:after, .global_read_locked:after, .global_read_locked_mine:after, .announce_read_locked:after, .announce_read_locked_mine:after, .sticky_read_locked:after, .sticky_read_locked_mine:after, .topic_read_locked:after, .topic_read_locked_mine:after, .contact-icon:before {
+
+.global_unread:before,
+.global_unread_mine:before,
+.announce_unread:before,
+.announce_unread_mine:before,
+.sticky_unread:before,
+.sticky_unread_mine:before,
+.global_unread_locked:before,
+.global_unread_locked_mine:before,
+.announce_unread_locked:before,
+.announce_unread_locked_mine:before,
+.forum_unread_locked:before,
+.topic_unread_locked:before,
+.topic_unread_locked_mine:before,
+.forum_link:before,
+.forum_unread:before,
+.forum_unread_subforum:before,
+.topic_unread:before,
+.topic_unread_mine:before,
+.sticky_unread_locked:before,
+.sticky_unread_locked_mine:before,
+.topic_unread_hot:before,
+.topic_unread_hot_mine:before,
+.pm_unread:before,
+.forum_read_locked:after,
+.global_read_locked:after,
+.global_read_locked_mine:after,
+.announce_read_locked:after,
+.announce_read_locked_mine:after,
+.sticky_read_locked:after,
+.sticky_read_locked_mine:after,
+.topic_read_locked:after,
+.topic_read_locked_mine:after,
+.contact-icon:before {
 	color: var(--accent-color, #de7300);
 }
+
 .forum_unread_subforum:after {
 	color: var(--accent-color, #de7300);
-	filter: drop-shadow(-1px 0px var(--sec-clr))
-  drop-shadow(0px -1px var(--sec-clr)) drop-shadow(0px 1px var(--sec-clr))
-  drop-shadow(1px 0px var(--sec-clr));
+	filter: drop-shadow(-1px 0px var(--sec-clr)) drop-shadow(0px -1px var(--sec-clr)) drop-shadow(0px 1px var(--sec-clr)) drop-shadow(1px 0px var(--sec-clr));
 }
+
 .custombbcode {
 	background-color: var(--accent-color, #de7300);
 }
+
 .custombbcode:hover,
 .custombbcode:active,
 .custombbcode:focus {
@@ -403,45 +435,36 @@ a.responsive-tab-link.dropdown-toggle:active {
 	box-shadow: 0 0 4px var(--accent-color, #de7300);
 }
 
-.badge:before {
-	border-bottom: 7.22px solid var(--accent-color, #de7300);
-}
-.badge:after {
-	border-top: 7.22px solid var(--accent-color, #de7300);
-}
-.pagination .button {
-	background-color: var(--accent-color, #de7300);
-}
-.pagination .button:before {
-	border-bottom: 9.24px solid var(--accent-color, #de7300);
-}
-.pagination .button:after {
-	border-top: 9.24px solid var(--accent-color, #de7300);
-}
+
 .pagination li.active span {
 	color: var(--accent-color, #de7300);
 }
+
 .row .pagination li a {
 	background-color: var(--accent-color, #de7300);
 }
+
 .row .pagination li a:before {
 	border-bottom: 6.35px solid var(--accent-color, #de7300);
 }
+
 .row .pagination li a:after {
 	border-top: 6.35px solid var(--accent-color, #de7300);
 }
+
 .icon,
 .button .icon,
 blockquote cite:before,
 .uncited:before {
 	color: var(--accent-color, #de7300);
 }
+
 dd input,
 dd textarea {
 	border: 1px solid var(--accent-color, #de7300);
 }
 
-.minitabs .tab > a:hover {
+.minitabs .tab>a:hover {
 	background-color: var(--accent-color, #de7300);
 }
 
@@ -454,6 +477,7 @@ a:focus,
 a:active {
 	color: var(--accent-color, #de7300);
 }
+
 /* Adjust these colors appropriately or use the same color as above */
 .postlink:visited {
 	color: var(--accent-color, #de7300);
@@ -483,6 +507,7 @@ a:hover .icon.icon-orange {
 .pollbar5 {
 	background-color: var(--accent-color, #de7300);
 }
+
 /*----------------------------*/
 /* .site_logo {
 	background-image: url("./images/logo.png");

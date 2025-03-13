@@ -153,7 +153,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 1220px),
-	only screen and (max-device-width: 1220px) {
+only screen and (max-device-width: 1220px) {
 	.wrap {
 		margin: 0 12px;
 	}
@@ -185,6 +185,7 @@ a:hover {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 .logo svg {
 	max-width: 500px;
 	display: block;
@@ -257,7 +258,7 @@ ul.linklist {
 	margin-left: 5px;
 }
 
-ul.linklist > li {
+ul.linklist>li {
 	float: left;
 	font-size: 1.1em;
 	line-height: 2.2em;
@@ -267,7 +268,7 @@ ul.linklist > li {
 	font-weight: bold;
 }
 
-ul.linklist > li.rightside,
+ul.linklist>li.rightside,
 p.rightside,
 a.rightside {
 	float: right;
@@ -324,7 +325,7 @@ ul.linklist .dropdown-up .dropdown {
 
 /* Bulletin icons for list items
 ----------------------------------------*/
-ul.linklist.bulletin > li:before {
+ul.linklist.bulletin>li:before {
 	display: inline-block;
 	content: "\2022";
 	font-size: inherit;
@@ -332,12 +333,12 @@ ul.linklist.bulletin > li:before {
 	padding-right: 4px;
 }
 
-ul.linklist.bulletin > li:first-child:before,
-ul.linklist.bulletin > li.rightside:last-child:before {
+ul.linklist.bulletin>li:first-child:before,
+ul.linklist.bulletin>li.rightside:last-child:before {
 	content: none;
 }
 
-ul.linklist.bulletin > li.no-bulletin:before {
+ul.linklist.bulletin>li.no-bulletin:before {
 	content: none;
 }
 
@@ -442,7 +443,8 @@ a.header-avatar span:after {
 	border-bottom: 10px solid transparent;
 	border-left: 10px dashed transparent;
 	border-right: 10px dashed transparent;
-	-webkit-transform: rotate(360deg); /* better anti-aliasing in webkit */
+	-webkit-transform: rotate(360deg);
+	/* better anti-aliasing in webkit */
 	display: block;
 }
 
@@ -533,7 +535,7 @@ a.header-avatar span:after {
 	width: 0px;
 }
 
-.jumpbox .spacer + .spacer {
+.jumpbox .spacer+.spacer {
 	width: 20px;
 }
 
@@ -562,16 +564,16 @@ a.header-avatar span:after {
 	text-align: left;
 }
 
-.dropdown-contents > li {
+.dropdown-contents>li {
 	padding-right: 15px;
 }
 
-.dropdown-nonscroll > li {
+.dropdown-nonscroll>li {
 	padding-right: 0;
 }
 
 .dropdown li:first-child,
-.dropdown li.separator + li,
+.dropdown li.separator+li,
 .dropdown li li {
 	border-top: 0;
 }
@@ -633,9 +635,11 @@ a.header-avatar span:after {
 .breadcrumbs.wrapped .crumb a {
 	letter-spacing: -0.3px;
 }
+
 .breadcrumbs.wrapped .crumb.wrapped-medium a {
 	letter-spacing: -0.4px;
 }
+
 .breadcrumbs.wrapped .crumb.wrapped-tiny a {
 	letter-spacing: -0.5px;
 }
@@ -643,15 +647,19 @@ a.header-avatar span:after {
 .breadcrumbs .crumb.wrapped-max a {
 	max-width: 120px;
 }
+
 .breadcrumbs .crumb.wrapped-wide a {
 	max-width: 100px;
 }
+
 .breadcrumbs .crumb.wrapped-medium a {
 	max-width: 80px;
 }
+
 .breadcrumbs .crumb.wrapped-small a {
 	max-width: 60px;
 }
+
 .breadcrumbs .crumb.wrapped-tiny a {
 	max-width: 40px;
 }
@@ -701,41 +709,51 @@ table.table1 tbody th {
 table.table1 .name {
 	text-align: left;
 }
+
 table.table1 .center {
 	text-align: center;
 }
+
 table.table1 .reportby {
 	width: 15%;
 }
+
 table.table1 .posts {
 	text-align: center;
 	width: 7%;
 }
+
 table.table1 .joined {
 	text-align: left;
 	width: 15%;
 }
+
 table.table1 .active {
 	text-align: left;
 	width: 15%;
 }
+
 table.table1 .mark {
 	text-align: center;
 	width: 7%;
 }
+
 table.table1 .info {
 	text-align: left;
 	width: 30%;
 }
+
 table.table1 .info div {
 	width: 100%;
 	white-space: normal;
 	overflow: hidden;
 }
+
 table.table1 .autocol {
 	line-height: 2em;
 	white-space: nowrap;
 }
+
 table.table1 thead .autocol {
 	padding-left: 1em;
 }
@@ -760,7 +778,7 @@ table.info tbody th {
 	margin: 0;
 }
 
-.forumbg-table > .inner {
+.forumbg-table>.inner {
 	margin: 0 -1px;
 }
 
@@ -849,7 +867,7 @@ fieldset.fields1 dd.recipients {
 }
 
 
-fieldset.fields1 dl.pmlist > dt {
+fieldset.fields1 dl.pmlist>dt {
 	width: auto !important;
 }
 
@@ -864,7 +882,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin: 20px 0;
 }
 
-.forabg + .action-bar {
+.forabg+.action-bar {
 	margin-top: 2em;
 }
 
@@ -875,8 +893,11 @@ fieldset.fields1 dl.pmlist dd.recipients {
 
 .action-bar .button-search {
 	margin-right: 2px;
-	height: 18px;
-	width: 30px;
+	margin-left: -6px;
+}
+
+.search-box .inputbox {
+	margin-top: 8px;
 }
 
 /* Pagination
@@ -885,50 +906,38 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	float: right;
 	text-align: right;
 	width: auto;
-	margin: 5px 0;
 	font-weight: bold;
+}
+
+.pagination .mark-read {
+	vertical-align: middle;
 }
 
 .action-bar.bar-bottom .pagination {
 	margin-top: 0;
 }
 
-.action-bar .pagination .button {
-	margin-right: 0;
-	float: none;
+
+.action-bar .pagination .arrow .button a {
+	padding-inline: 10px;
 }
 
-.pagination > ul {
+.action-bar .pagination .arrow .button a .icon {
+	vertical-align: middle;
+}
+
+.pagination>ul {
 	display: inline-block;
 	list-style: none !important;
-	margin-left: 5px;
+	margin-left: 15px;
 }
 
-.pagination > ul > li {
+.pagination>ul>li {
 	display: inline-block !important;
 	padding: 0;
 	font-size: 100%;
 	line-height: normal;
 	vertical-align: middle;
-	padding: 0 2px;
-}
-
-.pagination li a,
-.pagination li span {
-	border-radius: 0px;
-	padding: 2px 10px;
-}
-
-.pagination li.active span {
-	display: inline-block;
-	font-size: 13px;
-	font-weight: bold;
-	font-family: Roboto, Arial;
-	line-height: 1.4;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	border: 1px solid transparent;
 }
 
 .pagination li.ellipsis span {
@@ -940,17 +949,12 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin-right: 5px;
 }
 
-.pagination li.page-jump a {
-	padding: 1px 0;
+.pagination .button::before {
+	z-index: -1;
 }
 
-.pagination li.page-jump a i {
-	font-size: 21px;
-	line-height: 0.9;
-}
-
-.pagination .arrow a {
-	padding: 1px 3px;
+.pagination>ul>li.ellipsis {
+	margin-inline-end: 5px;
 }
 
 /* Pagination in viewforum for multipage topics */
@@ -960,7 +964,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin-bottom: 3px;
 }
 
-.row .pagination > ul {
+.row .pagination>ul {
 	margin: 0;
 }
 
@@ -987,7 +991,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 }
 
 @media only screen and (max-height: 500px),
-	only screen and (max-device-width: 500px) {
+only screen and (max-device-width: 500px) {
 	.phpbb_alert {
 		top: 25px;
 	}
@@ -1010,11 +1014,11 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	padding-bottom: 8px;
 }
 
-.phpbb_alert div.alert_text > p,
-.phpbb_alert div.alert_text > label,
-.phpbb_alert div.alert_text > select,
-.phpbb_alert div.alert_text > textarea,
-.phpbb_alert div.alert_text > input {
+.phpbb_alert div.alert_text>p,
+.phpbb_alert div.alert_text>label,
+.phpbb_alert div.alert_text>select,
+.phpbb_alert div.alert_text>textarea,
+.phpbb_alert div.alert_text>input {
 	font-size: 1.1em;
 }
 
@@ -1100,7 +1104,7 @@ p.post-notice {
 	margin-bottom: 1em;
 }
 
-form > p.post-notice strong {
+form>p.post-notice strong {
 	line-height: 20px;
 }
 
@@ -1128,8 +1132,8 @@ ul.linklist:after,
 .action-bar:after,
 .notification_text:after,
 .tabs-container:after,
-.tabs > ul:after,
-.minitabs > ul:after,
+.tabs>ul:after,
+.minitabs>ul:after,
 .postprofile .avatar-container:after {
 	clear: both;
 	content: "";
@@ -1241,13 +1245,13 @@ ul.linklist:after,
 	padding: 8px;
 }
 
-.dropdown-extended .footer > a {
+.dropdown-extended .footer>a {
 	padding: 5px 0;
 }
 
 .dropdown-extended ul li a,
-.notification_list dt > a,
-.dropdown-extended .footer > a {
+.notification_list dt>a,
+.dropdown-extended .footer>a {
 	display: block;
 	text-decoration: none;
 }
@@ -1333,7 +1337,7 @@ ul.linklist:after,
 	margin: 0 7px 0 0;
 }
 
-.linklist.compact .rightside > a > span {
+.linklist.compact .rightside>a>span {
 	display: none;
 }
 
@@ -1353,10 +1357,10 @@ ul.linklist:after,
 	display: none;
 }
 
-.dropdown .clone.hidden + li.separator {
+.dropdown .clone.hidden+li.separator {
 	display: none;
 }
 
-.dropdown .clone.hidden + li {
+.dropdown .clone.hidden+li {
 	border-top: none;
 }

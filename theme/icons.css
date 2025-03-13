@@ -9,23 +9,33 @@
  * Just change the name of the font after the 14/1 to the name of
  * the font you wish to use.
  */
-.icon, .button .icon, blockquote cite:before, .uncited:before {
+.icon,
+.button .icon,
+blockquote cite:before,
+.uncited:before {
 	display: inline-block;
-  	font-family: FontAwesome;
-  	font-weight: normal;
-  	font-style: normal;
-  	font-variant: normal;
-  	font-size: 14px;
-  	line-height: 1;
-  	text-rendering: auto; /* optimizelegibility throws things off #1094 */
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-size: 14px;
+	line-height: 1;
+	text-rendering: auto;
+	/* optimizelegibility throws things off #1094 */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon:before { padding-right: 2px; }
+.icon:before {
+	padding-right: 2px;
+}
 
 .button .icon:before {
 	padding-right: 0;
+}
+
+.pagination .next .button .icon:before {
+	vertical-align: middle;
 }
 
 /* Icon size classes - Default size is 14px, use these for small variations */
@@ -86,11 +96,14 @@
 	height: 12px;
 }
 
-blockquote cite:before, .uncited:before {
-	content: '\f10d'; /* Font Awesome quote-left */
+blockquote cite:before,
+.uncited:before {
+	content: '\f10d';
+	/* Font Awesome quote-left */
 }
 
-.rtl blockquote cite:before, .rtl .uncited:before {
-	content: '\f10e'; /* Font Awesome quote-right */
+.rtl blockquote cite:before,
+.rtl .uncited:before {
+	content: '\f10e';
+	/* Font Awesome quote-right */
 }
-

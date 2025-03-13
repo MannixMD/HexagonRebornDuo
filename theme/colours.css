@@ -33,6 +33,7 @@ Colours and backgrounds for links.css
 a {
 	color: var(--txt-clr);
 }
+
 a:hover {
 	text-decoration: none;
 }
@@ -133,6 +134,7 @@ ul.zebra-list li:nth-child(even) {
 .bg3 {
 	background-color: var(--main-clr);
 }
+
 .bg4,
 .bg5 {
 	background-color: var(--sec-clr);
@@ -278,6 +280,7 @@ a:hover .icon.icon-lightgray {
 li.reported:hover {
 	background-color: #d41c1c !important;
 }
+
 .sticky,
 .announce {
 	/* you can add a background for stickies and announcements*/
@@ -510,6 +513,7 @@ fieldset.polls dd div {
 .online {
 	background-image: none;
 }
+
 .offline {
 	border-right: 5px solid var(--txt-clr);
 }
@@ -550,6 +554,7 @@ Colours and backgrounds for buttons.css
 .caret {
 	border-color: var(--txt-clr);
 }
+
 .caret {
 	border-color: var(--txt-clr);
 }
@@ -557,6 +562,7 @@ Colours and backgrounds for buttons.css
 .contact-icons a {
 	border-color: transparent;
 }
+
 .contact-icons a:hover {
 	background-color: transparent;
 }
@@ -594,14 +600,12 @@ Colours and backgrounds for buttons.css
 	text-shadow: none;
 }
 
+.pagination .active .button::before {
+	color: var(--txt-clr);
+}
+
 /* Search box
 --------------------------------------------- */
-
-.search-box .inputbox,
-.search-box .inputbox:hover,
-.search-box .inputbox:focus {
-	margin-top: 3px;
-}
 
 .search-header {
 	margin-left: 5px;
@@ -623,36 +627,47 @@ Colours and backgrounds for buttons.css
 .pm-icon {
 	background-position: 0 0;
 }
+
 .email-icon {
 	background-position: -21px 0;
 }
+
 .jabber-icon {
 	background-position: -80px 0;
 }
+
 .phpbb_icq-icon {
 	background-position: -61px 0;
 }
+
 .phpbb_wlm-icon {
 	background-position: -182px 0;
 }
+
 .phpbb_aol-icon {
 	background-position: -244px 0;
 }
+
 .phpbb_website-icon {
 	background-position: -40px 0;
 }
+
 .phpbb_youtube-icon {
 	background-position: -98px 0;
 }
+
 .phpbb_facebook-icon {
 	background-position: -119px 0;
 }
+
 .phpbb_skype-icon {
 	background-position: -161px 0;
 }
+
 .phpbb_twitter-icon {
 	background-position: -203px 0;
 }
+
 .phpbb_yahoo-icon {
 	background-position: -224px 0;
 }
@@ -689,32 +704,32 @@ ul.cplist {
 
 /* CP tabbed menu
 ----------------------------------------*/
-.tabs .tab > a {
+.tabs .tab>a {
 	background: var(--main-clr);
 	color: var(--txt-clr);
 }
 
-.tabs .tab > a:hover {
+.tabs .tab>a:hover {
 	color: var(--txt-clr);
 }
 
-.tabs .activetab > a,
-.tabs .activetab > a:hover {
+.tabs .activetab>a,
+.tabs .activetab>a:hover {
 	color: var(--txt-clr);
 }
 
-.tabs .activetab > a:hover {
+.tabs .activetab>a:hover {
 	color: var(--txt-clr);
 }
 
 /* Mini tabbed menu used in MCP
 ----------------------------------------*/
-.minitabs .tab > a {
+.minitabs .tab>a {
 	background-color: var(--sec-clr);
 }
 
-.minitabs .activetab > a,
-.minitabs .activetab > a:hover {
+.minitabs .activetab>a,
+.minitabs .activetab>a:hover {
 	color: var(--sec-clr);
 }
 
@@ -743,7 +758,8 @@ ul.cplist {
 }
 
 @media only screen and (max-width: 900px),
-	only screen and (max-device-width: 900px) {
+only screen and (max-device-width: 900px) {
+
 	#navigation a,
 	.rtl #navigation a {
 		background: var(--sec-clr);
@@ -850,8 +866,7 @@ fieldset.fields1 {
 }
 
 /* Hover effects */
-fieldset dl:hover dt label {
-}
+fieldset dl:hover dt label {}
 
 fieldset.fields2 dl:hover dt label {
 	color: inherit;
@@ -956,6 +971,7 @@ input.disabled {
 
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .darken {
 	background-color: var(--bg-clr);
 }
@@ -1007,6 +1023,7 @@ li.notification-disapproved strong {
 .badge {
 	color: var(--txt-clr);
 }
+
 /* Hex
 ---------------------------------------- */
 .dropdown-contents a:hover {
@@ -1022,6 +1039,7 @@ li.notification-disapproved strong {
 a.responsive-tab-link.dropdown-toggle:active {
 	background-color: var(--sec-clr);
 }
+
 .header {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
@@ -1075,7 +1093,7 @@ dd textarea {
 	color: var(--txt-clr);
 }
 
-.minitabs .tab > a:hover {
+.minitabs .tab>a:hover {
 	color: var(--txt-clr);
 }
 
@@ -1083,122 +1101,145 @@ dd textarea {
 	background-color: var(--main-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 ul#nav-main {
 	background-color: var(--main-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .member-search.panel {
 	background-color: var(--main-clr);
 }
+
 .action-bar.bar-top,
 .action-bar.bar-bottom {
 	background-color: var(--main-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .sort-tools:hover .caret,
 .topic-tools:hover .caret,
 .quickmod:hover .caret {
 	border-color: var(--main-clr);
 }
+
 .topic_read_hot:after,
 .topic_read_hot_mine:after,
 .topic_unread_hot:after,
 .topic_unread_hot_mine:after {
 	color: var(--main-clr);
 }
+
 .overlay {
 	background-color: var(--main-clr);
 }
+
 .stat-block p {
 	background: var(--main-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .topicheader {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 #review {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 thead {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 h2.topic-title,
 .forum-title {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 ul.topiclist.missing-column {
 	background-color: var(--extra-clr);
 }
+
 .stat-block h3 {
 	background-color: var(--extra-clr);
 	color: var(--txt-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .stat-block h3 a {
 	color: var(--txt-clr);
 }
+
 .panel-container h3 {
 	background-color: var(--extra-clr);
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .social-icon:hover {
 	color: var(--txt-clr);
 }
+
 .social-icon:active {
 	color: var(--txt-clr);
 }
+
 #slideout {
 	background-color: var(--txt-clr);
 }
+
 #slideout_inner {
 	background-color: var(--txt-clr);
 }
-.pagination .active {
-	background-color: var(--txt-clr);
-}
-.pagination .active:before {
-	border-bottom: 9.24px solid var(--txt-clr);
-}
-.pagination .active:after {
-	border-top: 9.24px solid var(--txt-clr);
-}
+
+
 ul.topiclist li.row dl {
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 dl.row-item {
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .navigation {
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 tbody {
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 .post {
 	box-shadow: 0 0 4px var(--bg-clr);
 }
+
 a.button.hexagonbutton {
 	background-color: var(--bg-clr);
 }
+
 a.button.hexagonbutton:hover {
 	background-color: var(--bg-clr);
 }
+
 a.button.button-icon-only.hexagonbutton {
 	background-color: var(--bg-clr);
 }
+
 .fa-paint-brush:before {
 	color: var(--bg-clr);
 }
+
 .colorbutton:hover {
 	box-shadow: 0 0 5px var(--bg-clr);
 }
+
 .ucp-main .colorbutton:hover {
 	box-shadow: 0 0 0 2px var(--bg-clr);
 }
+
 @media (max-width: 700px) {
 	.responsivebutton:before {
 		font-size: 50px;
