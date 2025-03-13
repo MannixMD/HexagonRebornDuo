@@ -972,36 +972,23 @@ a.nav-avatar img {
 }
 
 .row .pagination li a {
-	border: none;
-	box-shadow: none;
-	line-height: 1.5;
+	padding: 9px 13px;
+	margin: 0;
+	line-height: 1.3;
 	position: relative;
-	width: 22px;
-	height: 12.7px;
-	margin: 5.77px 0px;
-	padding: 0;
-	text-align: center;
-	display: block;
-}
-
-.row .pagination li a:before,
-.row .pagination li a:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 11px solid transparent;
-	border-right: 11px solid transparent;
+	isolation: isolate;
 }
 
 .row .pagination li a:before {
-	bottom: 100%;
-	left: 0;
-}
-
-.row .pagination li a:after {
-	top: 100%;
-	width: 0;
-	left: 0;
+	font-size: calc(32px * 0.8);
+	content: '\e800';
+	font-family: hexagon;
+	top: -3px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+	color: var(--accent-color);
 }
 
 /* BELL */

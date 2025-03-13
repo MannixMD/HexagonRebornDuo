@@ -535,8 +535,7 @@ Colours and backgrounds for buttons.css
 .button:hover,
 .button:focus,
 .button:active {
-	border-color: transparent;
-	background-color: transparent;
+	text-shadow: 0px 0px 10px currentColor;
 }
 
 .button .icon,
@@ -589,16 +588,6 @@ Colours and backgrounds for buttons.css
 	color: var(--txt-clr);
 }
 
-.pagination li a:hover,
-.pagination li a:hover .icon,
-.pagination .dropdown-visible a.dropdown-trigger,
-.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
-	background: transparent;
-	border-color: transparent;
-	filter: none;
-	color: var(--txt-clr);
-	text-shadow: none;
-}
 
 .pagination .active .button::before {
 	color: var(--txt-clr);

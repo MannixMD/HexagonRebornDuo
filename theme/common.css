@@ -953,9 +953,6 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	z-index: -1;
 }
 
-.pagination>ul>li.ellipsis {
-	margin-inline-end: 5px;
-}
 
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
@@ -971,8 +968,13 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .row .pagination li a,
 .row .pagination li span {
 	border-radius: 0px;
-	padding: 0px 6px;
 	font-size: 80%;
+}
+
+.row .pagination li:hover,
+.row .pagination li:focus,
+.row .pagination li:active {
+	text-shadow: 0px 0px 5px currentColor;
 }
 
 /* jQuery popups
