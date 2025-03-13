@@ -83,8 +83,7 @@
 }
 
 .button-icon-only {
-	padding-left: 3px;
-	padding-right: 3px;
+	padding-inline: 8px;
 }
 
 /* Poster contact icons
