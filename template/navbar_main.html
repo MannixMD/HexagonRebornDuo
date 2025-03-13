@@ -149,14 +149,14 @@
 		{% if S_DISPLAY_PM %}
 		<li class="rightside" data-link-persistent="true" data-skip-responsive="true" style="display:block;">
 			<a href="{{ U_PRIVATEMSGS }}" role="menuitem">
-				<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span class="responsive-hide">{L_PRIVATE_MESSAGES}</span><strong class="badge {% if not PRIVATE_MESSAGE_COUNT %} hidden {% endif %}">{PRIVATE_MESSAGE_COUNT}</strong>
+				<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span class="responsive-hide">{L_PRIVATE_MESSAGES}</span><strong class="badge {% if not PRIVATE_MESSAGE_COUNT %} hidden {% endif %}">{% if PRIVATE_MESSAGE_COUNT >= 9 %}9&#43;{% else %}{PRIVATE_MESSAGE_COUNT}{% endif %}</strong>
 			</a>
 		</li>
 		{% endif %}		
 		{% if S_NOTIFICATIONS_DISPLAY %} 
 		<li class="dropdown-container dropdown-{{ S_CONTENT_FLOW_END }} rightside" data-link-persistent="true" data-skip-responsive="true" style="display:block;">
 			<a href="{{ U_VIEW_ALL_NOTIFICATIONS }}" id="notification_list_button" class="dropdown-trigger">
-				<i class="icon fa-bell fa-fw {% if NOTIFICATIONS_COUNT %} faa-ring animated faa-slow{% endif %}" aria-hidden="true"></i><span class="responsive-hide">{{ lang('NOTIFICATIONS') }}</span> <strong class="badge{% if not NOTIFICATIONS_COUNT %} hidden {% endif %}">{NOTIFICATIONS_COUNT}</strong>
+				<i class="icon fa-bell fa-fw {% if NOTIFICATIONS_COUNT %} faa-ring animated faa-slow{% endif %}" aria-hidden="true"></i><span class="responsive-hide">{{ lang('NOTIFICATIONS') }}</span> <strong class="badge{% if not NOTIFICATIONS_COUNT %} hidden {% endif %} ">{% if NOTIFICATIONS_COUNT >= 9 %}9&#43;{% else %}{NOTIFICATIONS_COUNT}{% endif %}</strong>
 			</a>
 			{% INCLUDE 'notification_dropdown.html' %}
 		</li>
