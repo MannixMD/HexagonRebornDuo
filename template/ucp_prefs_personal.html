@@ -189,19 +189,11 @@ if (localStorage.getItem('ThemePref') == 'Dark'){
 }else if (localStorage.getItem('ThemePref') == 'Light'){
 	document.querySelector('input[id="Light"]').checked = 'true';
 }else{
-	colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)')
-	const setColorScheme = e => {
-	  if ( e.matches ) {
-		document.querySelector('input[id="Dark"]').checked = "true";
-		return
-	  }
-	  if ( !e.matches ) {
-	  document.querySelector('input[id="Light"]').checked = "true";
-		return
-	  }
+	if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+		document.querySelector('input[id="Dark"]').checked = 'true';
+	}else{
+		document.querySelector('input[id="Light"]').checked = 'true';
 	}
-	setColorScheme(colorSchemeQueryList);
-	colorSchemeQueryList.addEventListener('change', setColorScheme);
 }
 
 </script>
