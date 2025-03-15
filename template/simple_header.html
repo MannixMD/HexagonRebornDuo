@@ -37,32 +37,10 @@
 
 <script>
 // Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
-const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-
-if (localStorage.getItem("ThemePref") == null) {
-
-	const setColorScheme = e => {
-	  if ( e.matches ) {
-		setDarkTheme()
-		localStorage.setItem("Theme", 'Dark');
-		return
-	  }
-	  if ( !e.matches ) {
-		setLightTheme()
-		localStorage.setItem("Theme", 'Light');
-		return
-	  }
-	}
-	setColorScheme(colorSchemeQueryList);
-	colorSchemeQueryList.addEventListener('change', setColorScheme);
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
+if(localStorage.getItem('ThemePref') == 'Dark'){
 	setDarkTheme()
-}else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
+}else if(localStorage.getItem('ThemePref') == 'Light'){
 	setLightTheme()
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
-	setLightTheme();
-}else {
-	setDarkTheme();
 }
 // function to set the Dark theme
 function setDarkTheme() {

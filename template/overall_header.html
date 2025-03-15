@@ -63,33 +63,10 @@
 {% endif %}
 
 <script>
-// Checks if user has set prefered theme color if not set one corresponding to user's browser/system setting
-let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-
-if (localStorage.getItem("ThemePref") == null) {
-
-	const setColorScheme = e => {
-	  if ( e.matches ) {
-		setDarkTheme()
-		localStorage.setItem("Theme", 'Dark');
-		return
-	  }
-	  if ( !e.matches ) {
-		setLightTheme()
-		localStorage.setItem("Theme", 'Light');
-		return
-	  }
-	}
-	setColorScheme(colorSchemeQueryList);
-	colorSchemeQueryList.addEventListener('change', setColorScheme);
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
+if(localStorage.getItem('ThemePref') == 'Dark'){
 	setDarkTheme()
-}else if (localStorage.getItem("Theme") == 'Light' && localStorage.getItem("ThemePref") == 'Light') {
+}else if(localStorage.getItem('ThemePref') == 'Light'){
 	setLightTheme()
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
-	setLightTheme();
-}else {
-	setDarkTheme();
 }
 // function to set the Dark theme
 function setDarkTheme() {
@@ -106,12 +83,12 @@ function setLightTheme() {
 }
 	
 
-	if (localStorage.getItem('accent')){
-		document.documentElement.style.setProperty('--accent-color', `${localStorage.getItem("accent")}`)
-		document.querySelector('meta[name="theme-color"]').content = localStorage.getItem("accent")	
-		document.querySelector('meta[name="msapplication-navbutton-color"]').content = localStorage.getItem("accent")	
-		document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = localStorage.getItem("accent")	
-	}
+if (localStorage.getItem('accent')){
+	document.documentElement.style.setProperty('--accent-color', `${localStorage.getItem("accent")}`)
+	document.querySelector('meta[name="theme-color"]').content = localStorage.getItem("accent")	
+	document.querySelector('meta[name="msapplication-navbutton-color"]').content = localStorage.getItem("accent")	
+	document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = localStorage.getItem("accent")	
+}
 	
 </script>
 

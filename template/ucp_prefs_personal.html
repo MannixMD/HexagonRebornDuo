@@ -183,25 +183,16 @@ ThemeSwitcher.addEventListener('change', (e)=>{
 
 
 // Checks Theme input base on user choice	
-if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Dark'){
-document.querySelector('input[id="Dark"]').checked = "true";
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == 'Light'){
-document.querySelector('input[id="Light"]').checked = "true";
-}else if (localStorage.getItem("Theme") == 'Light'&& localStorage.getItem("ThemePref") == 'Light'){
-	document.querySelector('input[id="Light"]').checked = "true";
-}else if (localStorage.getItem("Theme") == 'Light'&& localStorage.getItem("ThemePref") == 'Dark'){
-	document.querySelector('input[id="Dark"]').checked = "true";
-}else if (localStorage.getItem("Theme") == 'Dark' && localStorage.getItem("ThemePref") == null){
-	document.querySelector('input[id="Dark"]').checked = "true";
+
+if (localStorage.getItem('ThemePref') == 'Dark'){
+	document.querySelector('input[id="Dark"]').checked = 'true';
+}else if (localStorage.getItem('ThemePref') == 'Light'){
+	document.querySelector('input[id="Light"]').checked = 'true';
 }else{
-	document.querySelector('input[id="Light"]').checked = "true";
-}
-
-if (localStorage.getItem("ThemePref") == null) {
-
+	colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)')
 	const setColorScheme = e => {
 	  if ( e.matches ) {
-document.querySelector('input[id="Dark"]').checked = "true";
+		document.querySelector('input[id="Dark"]').checked = "true";
 		return
 	  }
 	  if ( !e.matches ) {
