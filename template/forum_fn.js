@@ -55,7 +55,7 @@ function pageJump(item) {
 function marklist(id, name, state) {
 	'use strict';
 
-	jQuery('#' + id + ' input[type=checkbox][name]').each(function() {
+	jQuery('#' + id + ' input[type=checkbox][name]').each(function () {
 		var $this = jQuery(this);
 		if ($this.attr('name').substr(0, name.length) === name && !$this.prop('disabled')) {
 			$this.prop('checked', state);
@@ -97,10 +97,10 @@ function viewableArea(e, itself) {
 /**
 * Alternate display of subPanels
 */
-jQuery(function($) {
+jQuery(function ($) {
 	'use strict';
 
-	$('.sub-panels').each(function() {
+	$('.sub-panels').each(function () {
 
 		var $childNodes = $('a[data-subpanel]', this),
 			panels = $childNodes.map(function () {
@@ -132,7 +132,7 @@ function activateSubPanel(p, panels) {
 	$('input[name="show_panel"]').val(showPanel);
 
 	if (typeof panels === 'undefined') {
-		panels = jQuery('.sub-panels a[data-subpanel]').map(function() {
+		panels = jQuery('.sub-panels a[data-subpanel]').map(function () {
 			return this.getAttribute('data-subpanel');
 		});
 	}
@@ -231,7 +231,7 @@ function phpbbCheckKey(event) {
 /**
 * Apply onkeypress event for forcing default submit button on ENTER key press
 */
-jQuery(function($) {
+jQuery(function ($) {
 	'use strict';
 
 	$('form input[type=text], form input[type=password]').on('keypress', function (e) {
@@ -275,7 +275,7 @@ function insertUser(formId, value) {
 function insert_marked_users(formId, users) {
 	'use strict';
 
-	$(users).filter(':checked').each(function() {
+	$(users).filter(':checked').each(function () {
 		insertUser(formId, this.value);
 	});
 
@@ -302,29 +302,29 @@ function parseDocument($container) {
 	/**
 	* Reset avatar dimensions when changing URL or EMAIL
 	*/
-	$container.find('input[data-reset-on-edit]').on('keyup', function() {
+	$container.find('input[data-reset-on-edit]').on('keyup', function () {
 		$(this.getAttribute('data-reset-on-edit')).val('');
 	});
 
 	/**
 	* Pagination
 	*/
-	$container.find('.pagination .page-jump-form :button').click(function() {
+	$container.find('.pagination .page-jump-form :button').click(function () {
 		var $input = $(this).siblings('input.inputbox');
 		pageJump($input);
 	});
 
-	$container.find('.pagination .page-jump-form input.inputbox').on('keypress', function(event) {
+	$container.find('.pagination .page-jump-form input.inputbox').on('keypress', function (event) {
 		if (event.which === 13 || event.keyCode === 13) {
 			event.preventDefault();
 			pageJump($(this));
 		}
 	});
 
-	$container.find('.pagination .dropdown-trigger').click(function() {
+	$container.find('.pagination .dropdown-trigger').click(function () {
 		var $dropdownContainer = $(this).parent();
 		// Wait a little bit to make sure the dropdown has activated
-		setTimeout(function() {
+		setTimeout(function () {
 			if ($dropdownContainer.hasClass('dropdown-visible')) {
 				$dropdownContainer.find('input.inputbox').focus();
 			}
@@ -335,7 +335,7 @@ function parseDocument($container) {
 	/**
 	* Resize navigation (breadcrumbs) block to keep all links on same line
 	*/
-	$container.find('.navlinks').each(function() {
+	$container.find('.navlinks').each(function () {
 		var $this = $(this),
 			$left = $this.children().not('.rightside'),
 			$right = $this.children('.rightside');
@@ -350,7 +350,7 @@ function parseDocument($container) {
 				minWidth = Math.max($this.width() / 3, 240),
 				maxWidth;
 
-			$right.each(function() {
+			$right.each(function () {
 				var $this = $(this);
 				if ($this.is(':visible')) {
 					width += $this.outerWidth(true);
@@ -368,7 +368,7 @@ function parseDocument($container) {
 	/**
 	* Makes breadcrumbs responsive
 	*/
-	$container.find('.breadcrumbs:not([data-skip-responsive])').each(function() {
+	$container.find('.breadcrumbs:not([data-skip-responsive])').each(function () {
 		var $this = $(this),
 			$links = $this.find('.crumb'),
 			length = $links.length,
@@ -379,7 +379,7 @@ function parseDocument($container) {
 			wrapped = false;
 
 		// Set tooltips
-		$this.find('a').each(function() {
+		$this.find('a').each(function () {
 			var $link = $(this);
 			$link.attr('title', $link.text());
 		});
@@ -396,7 +396,7 @@ function parseDocument($container) {
 			}
 
 			maxHeight = parseInt($this.css('line-height'), 10);
-			$links.each(function() {
+			$links.each(function () {
 				if ($(this).height() > 0) {
 					maxHeight = Math.max(maxHeight, $(this).outerHeight(true));
 				}
@@ -442,7 +442,7 @@ function parseDocument($container) {
 	*/
 	var selector = '.linklist:not(.navlinks, [data-skip-responsive]),' +
 		'.postbody .post-buttons:not([data-skip-responsive])';
-	$container.find(selector).each(function() {
+	$container.find(selector).each(function () {
 		var $this = $(this),
 			filterSkip = '.breadcrumbs, [data-skip-responsive]',
 			filterLast = '.edit-icon, .quote-icon, [data-last-responsive]',
@@ -477,7 +477,7 @@ function parseDocument($container) {
 			maxHeight = 0;
 
 		// Find the tallest element in the list (we assume that all elements are roughly the same height)
-		$linksAll.each(function() {
+		$linksAll.each(function () {
 			if (!$(this).height()) {
 				return;
 			}
@@ -542,8 +542,8 @@ function parseDocument($container) {
 				if ($this.hasClass('post-buttons')) {
 					$('.button', $menuContents).removeClass('button');
 					$('.sr-only', $menuContents).removeClass('sr-only');
-				$('.js-responsive-menu-link').addClass('button').addClass('button-icon-only') ;
-					
+					$('.js-responsive-menu-link').addClass('button').addClass('button-icon-only');
+
 				}
 				copied1 = true;
 			}
@@ -601,8 +601,8 @@ function parseDocument($container) {
 		}
 
 		// If there are any images in the links list, run the check again after they have loaded
-		$linksAll.find('img').each(function() {
-			$(this).on('load', function() {
+		$linksAll.find('img').each(function () {
+			$(this).on('load', function () {
 				check();
 			});
 		});
@@ -630,7 +630,7 @@ function parseDocument($container) {
 	* To add that functionality to .topiclist list simply add
 	* responsive-show-all to list of classes
 	*/
-	$container.find('.topiclist.responsive-show-all > li > dl').each(function() {
+	$container.find('.topiclist.responsive-show-all > li > dl').each(function () {
 		var $this = $(this),
 			$block = $this.find('dt .responsive-show:last-child'),
 			first = true;
@@ -644,7 +644,7 @@ function parseDocument($container) {
 		}
 
 		// Copy contents of each column
-		$this.find('dd').not('.mark').each(function() {
+		$this.find('dd').not('.mark').each(function () {
 			var column = $(this),
 				$children = column.children(),
 				html = column.html();
@@ -653,7 +653,7 @@ function parseDocument($container) {
 				html = $children.html();
 			}
 
-			$block.append((first ? '' : '<br />') + html);
+			$block.append((first ? '' : '<br>') + html);
 
 			first = false;
 		});
@@ -666,14 +666,14 @@ function parseDocument($container) {
 	* To add that functionality to .topiclist list simply add
 	* responsive-show-columns to list of classes
 	*/
-	$container.find('.topiclist.responsive-show-columns').each(function() {
+	$container.find('.topiclist.responsive-show-columns').each(function () {
 		var $list = $(this),
 			headers = [],
 			headersLength = 0;
 
 		// Find all headers, get contents
-		$list.prev('.topiclist').find('li.header dd').not('.mark').each(function() {
-			headers.push($(this).text());
+		$list.prev('.topiclist').find('li.header dd').not('.mark').each(function () {
+			headers.push($("<div>").text($(this).text()).html());
 			headersLength++;
 		});
 
@@ -682,7 +682,7 @@ function parseDocument($container) {
 		}
 
 		// Parse each row
-		$list.find('dl').each(function() {
+		$list.find('dl').each(function () {
 			var $this = $(this),
 				$block = $this.find('dt .responsive-show:last-child'),
 				first = true;
@@ -696,7 +696,7 @@ function parseDocument($container) {
 			}
 
 			// Copy contents of each column
-			$this.find('dd').not('.mark').each(function(i) {
+			$this.find('dd').not('.mark').each(function (i) {
 				var column = $(this),
 					children = column.children(),
 					html = column.html();
@@ -710,7 +710,7 @@ function parseDocument($container) {
 					html = headers[i] + ': <strong>' + html + '</strong>';
 				}
 
-				$block.append((first ? '' : '<br />') + html);
+				$block.append((first ? '' : '<br>') + html);
 
 				first = false;
 			});
@@ -720,7 +720,7 @@ function parseDocument($container) {
 	/**
 	* Responsive tables
 	*/
-	$container.find('table.table1').not('.not-responsive').each(function() {
+	$container.find('table.table1').not('.not-responsive').each(function () {
 		var $this = $(this),
 			$th = $this.find('thead > tr > th'),
 			headers = [],
@@ -728,7 +728,7 @@ function parseDocument($container) {
 			i, headersLength;
 
 		// Find each header
-		$th.each(function(column) {
+		$th.each(function (column) {
 			var cell = $(this),
 				colspan = parseInt(cell.attr('colspan'), 10),
 				dfn = cell.attr('data-dfn'),
@@ -756,7 +756,7 @@ function parseDocument($container) {
 			return;
 		}
 
-		$this.find('tbody > tr').each(function() {
+		$this.find('tbody > tr').each(function () {
 			var row = $(this),
 				cells = row.children('td'),
 				column = 0;
@@ -766,7 +766,7 @@ function parseDocument($container) {
 				return;
 			}
 
-			cells.each(function() {
+			cells.each(function () {
 				var cell = $(this),
 					colspan = parseInt(cell.attr('colspan'), 10),
 					text = $.trim(cell.text());
@@ -776,7 +776,9 @@ function parseDocument($container) {
 				}
 
 				if ((text.length && text !== '-') || cell.children().length) {
-					cell.prepend('<dfn style="display: none;">' + headers[column] + '</dfn>');
+					if (headers[column].length) {
+						cell.prepend($("<dfn>").css('display', 'none').text(headers[column]));
+					}
 				} else {
 					cell.addClass('empty');
 				}
@@ -790,7 +792,7 @@ function parseDocument($container) {
 	/**
 	* Hide empty responsive tables
 	*/
-	$container.find('table.responsive > tbody').not('.responsive-skip-empty').each(function() {
+	$container.find('table.responsive > tbody').not('.responsive-skip-empty').each(function () {
 		var $items = $(this).children('tr');
 		if (!$items.length) {
 			$(this).parent('table:first').addClass('responsive-hide');
@@ -800,7 +802,7 @@ function parseDocument($container) {
 	/**
 	* Responsive tabs
 	*/
-	$container.find('#tabs, #minitabs').not('[data-skip-responsive]').each(function() {
+	$container.find('#tabs, #minitabs').not('[data-skip-responsive]').each(function () {
 		var $this = $(this),
 			$ul = $this.children(),
 			$tabs = $ul.children().not('[data-skip-responsive]'),
@@ -811,7 +813,7 @@ function parseDocument($container) {
 			lastWidth = false,
 			responsive = false;
 
-		$links.each(function() {
+		$links.each(function () {
 			var $this = $(this);
 			maxHeight = Math.max(maxHeight, Math.max($this.outerHeight(true), $this.parent().outerHeight(true)));
 		});
@@ -849,13 +851,13 @@ function parseDocument($container) {
 				$menu.prepend($tab.clone(true).removeClass('tab'));
 				$tab.hide();
 				if ($this.height() <= maxHeight) {
-					$menu.find('a').click(function() {
+					$menu.find('a').click(function () {
 						check(true);
 					});
 					return;
 				}
 			}
-			$menu.find('a').click(function() {
+			$menu.find('a').click(function () {
 				check(true);
 			});
 		}
@@ -872,7 +874,7 @@ function parseDocument($container) {
 	/**
 	 * Hide UCP/MCP navigation if there is only 1 item
 	 */
-	$container.find('#navigation').each(function() {
+	$container.find('#navigation').each(function () {
 		var $items = $(this).children('ol, ul').children('li');
 		if ($items.length === 1) {
 			$(this).addClass('responsive-hide');
@@ -882,7 +884,7 @@ function parseDocument($container) {
 	/**
 	* Replace responsive text
 	*/
-	$container.find('[data-responsive-text]').each(function() {
+	$container.find('[data-responsive-text]').each(function () {
 		var $this = $(this),
 			fullText = $this.text(),
 			responsiveText = $this.attr('data-responsive-text'),
@@ -912,7 +914,7 @@ function parseDocument($container) {
 /**
 * Run onload functions
 */
-jQuery(function($) {
+jQuery(function ($) {
 	'use strict';
 
 	// Swap .nojs and .hasjs
@@ -921,7 +923,7 @@ jQuery(function($) {
 	$('#phpbb.hastouch').removeClass('notouch');
 
 	// Focus forms
-	$('form[data-focus]:first').each(function() {
+	$('form[data-focus]:first').each(function () {
 		$('#' + this.getAttribute('data-focus')).focus();
 	});
 
