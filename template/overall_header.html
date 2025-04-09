@@ -61,7 +61,7 @@
 	})(document);
 </script>
 {% endif %}
-
+{% if definition.THEMESWITCHER == 'yes'%}
 <script>
 if(localStorage.getItem('ThemePref') == 'Dark'){
 	setDarkTheme()
@@ -81,18 +81,19 @@ function setLightTheme() {
 	const metaColorScheme = document.querySelector(`meta[name="color-scheme"]`);
 	metaColorScheme.content = "Light";
 }
-	
 
+</script>
+{% endif %}
+{% if definition.COLORPICKER == 'yes'%}
+<script>
 if (localStorage.getItem('accent')){
 	document.documentElement.style.setProperty('--accent-color', `${localStorage.getItem("accent")}`)
 	document.querySelector('meta[name="theme-color"]').content = localStorage.getItem("accent")	
 	document.querySelector('meta[name="msapplication-navbutton-color"]').content = localStorage.getItem("accent")	
 	document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').content = localStorage.getItem("accent")	
 }
-	
 </script>
-
-
+{% endif %}
 {% if S_CONTENT_DIRECTION eq 'rtl' %}
 	<link href="{{ T_THEME_PATH }}/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 {% endif %}
