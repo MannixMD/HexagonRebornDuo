@@ -12,13 +12,20 @@
 	{% if ERROR %}<p class="error">{{ ERROR }}</p>{% endif %}
 	{% EVENT ucp_prefs_personal_prepend %}
 	{% if definition.COLORPICKER == 'yes' %}
-	<dl>
+	<dl id="ColorPicker">
 	<dt><label>Custom Color Picker {{ lang('COLON') }}</label></dt>
-	<dd><input type="color" id="accent" ><a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
+	<dd><input type="color" id="accent" list="ColorPicker-color-set"><a class="clearstorage" style="vertical-align: middle;" href="#" title="{L_RESET}"><i class="icon fa-refresh fa-fw icon-xl" aria-hidden="false"></i></a></dd>
 	</dl>
+	<datalist id="ColorPicker-color-set">
+	<option value="#de7300"></option>
+	<option value="#00a651"></option>
+	<option value="#00aeef"></option>
+	<option value="#29a3a3"></option>
+	<option value="#662d91"></option>
+	</datalist>
 	{% endif %}
 	{% if definition.THEMESWITCHER == 'yes' %}	
-	<dl>
+	<dl id="ThemeSwitcher">
 	<dt><label>Theme Switcher {{ lang('COLON') }}</label></dt>
 	<dd>
 		<fieldset id="ThemePicker">
