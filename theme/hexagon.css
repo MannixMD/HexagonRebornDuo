@@ -1208,3 +1208,8 @@ input[type="color"] {
 	margin: 0;
 	cursor: pointer;
 }
+
+.nojs #ColorPicker,
+.nojs #ThemeSwitcher {
+	display: none;
+}
