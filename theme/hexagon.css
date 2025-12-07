@@ -697,6 +697,31 @@ fieldset#ThemePicker input {
 	display: grid;
 }
 
+.overlay-menu .header-profile {
+	width: 100%;
+}
+
+.overlay-menu .dropdown {
+	display: block;
+	position: unset;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.overlay-menu .pointer,
+.overlay-menu .separator {
+	display: none;
+}
+
+.overlay-menu .dropdown-contents {
+	border: none !important;
+	box-shadow: none;
+	max-height: unset;
+	padding: 0;
+}
+
 .overlay-content [data-link-first] {
 	order: -2;
 }
@@ -1167,22 +1192,13 @@ a.nav-avatar img {
 		margin: 9px 0;
 	}
 
-	.nojs .nav-main .responsive-hide:not(span) {
-		display: block !important;
+	.nojs .wrap:has([data-mobile-button]:hover) .overlay {
+		transform: scaleX(1);
+		opacity: 1;
 	}
 
-	.nojs .nav-main .responsive-show,
-	.nojs .nav-main>li>a>span {
-		display: none !important;
-	}
-
-	.nojs #username_logged_in img {
-		max-height: 28px;
-	}
-
-	.nojs #username_logged_in span {
-		font-size: 15px;
-		vertical-align: bottom;
+	.nojs .overlay .dropdown {
+		margin: 0;
 	}
 }
 

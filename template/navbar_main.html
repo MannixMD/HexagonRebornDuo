@@ -1,7 +1,13 @@
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-	<ul class="overlay-menu" role="menu"></ul>
+	<ul class="overlay-menu" role="menu">
+		{% if S_USER_LOGGED_IN %}
+		{{ block('nav_main_right_side_user', _self) }}
+		{% endif %}
+		{{ block('nav_main_left_side_quick_links', _self) }}
+		{{ block('nav_main_left_side', _self) }}
+	</ul>
   </div>
 </div>
 
@@ -14,6 +20,7 @@
 			<div class="dropdown">
 				<div class="pointer"><div class="pointer-inner"></div></div>
 				<ul class="dropdown-contents" role="menu">
+					{% block nav_main_left_side_quick_links %}					
 					{% EVENT navbar_header_quick_links_before %}
 					{% if S_DISPLAY_SEARCH %}
 					<li class="separator"></li>
@@ -76,10 +83,11 @@
 					<li class="separator"></li>
 
 					{% EVENT navbar_header_quick_links_after %}
+					{% endblock nav_main_left_side_quick_links %}					
 				</ul>
 			</div>
 		</li>
-
+		{% block nav_main_left_side %}
 		{% EVENT overall_header_navigation_prepend %}
 		<li class="responsive-hide" {% if not S_USER_LOGGED_IN %}data-skip-responsive="true"{% else %}data-last-responsive="true"{% endif %}>
 			<a href="{{ U_FAQ }}" rel="help" title="{{ lang('FAQ_EXPLAIN') }}" role="menuitem">
@@ -101,9 +109,10 @@
 			</a>
 		</li>
 		{% endif %}
-
+		{% endblock nav_main_left_side %}
 		{% if S_REGISTERED_USER %}
 		{% EVENT navbar_header_user_profile_prepend %}
+		{% block nav_main_right_side_user %}		
 		<li id="username_logged_in" data-link-first class="rightside responsive-hide {% if CURRENT_USER_AVATAR %} no-bulletin{% endif %}" data-skip-responsive="true">
 			{% EVENT navbar_header_username_prepend %}
 			<div class="header-profile dropdown-container">
@@ -146,6 +155,7 @@
 			</div>
 			{% EVENT navbar_header_username_append %}
 		</li>
+		{% endblock nav_main_right_side_user %}		
 		{% if S_DISPLAY_PM %}
 		<li class="rightside" data-link-persistent="true" data-skip-responsive="true" style="display:block;">
 			<a href="{{ U_PRIVATEMSGS }}" role="menuitem">

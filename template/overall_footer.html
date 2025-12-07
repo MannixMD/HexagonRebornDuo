@@ -97,16 +97,6 @@ function closeJumpbox() {
 }
 </script>
 
-<script>
-	let menu = document.querySelector('#myNav ul');
-	let links = [...document.querySelectorAll('#nav-main li:not(.separator, #notification_list li,[data-mobile-button],#quick-links,[data-link-persistent])')]
-
-	links.forEach(item =>{
-		
-		let copy = item.cloneNode(true)
-		menu.appendChild(copy)
-	})
-</script>
 
 
 {% if S_ALLOW_CDN %}
