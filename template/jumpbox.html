@@ -27,7 +27,7 @@
 	{% endif %}
 
 	{% if S_DISPLAY_JUMPBOX %}
-	<div class="responsive-show" style="display: none;">
+	<div id="jumpbox-btn" class="responsive-show" style="display: none;">
 		<span onclick="openJumpbox()">
 			<span title="{{ lang('JUMP_TO') }}" class="button button-secondary" style="float:right;">
 				<i class="icon fa-level-up fa-fw" aria-hidden="true"></i>
@@ -38,11 +38,7 @@
 		<a href="javascript:void(0)" class="closebtn" onclick="closeJumpbox()">&times;</a>
 		<div class="overlay-content">
 			<ul role="menu">
-			{% for jumpbox_forums in loops.jumpbox_forums %}
-				{% if jumpbox_forums.FORUM_ID neq -1 %}
-				<li><a href="{{ jumpbox_forums.LINK }}" class="{% if jumpbox_forums.level %}jumpbox-sub-link{% elseif jumpbox_forums.S_IS_CAT %}jumpbox-cat-link{% else %}jumpbox-forum-link{% endif %}">{% for level in jumpbox_forums.level %}<span class="spacer"></span>{% endfor %} <span>{% if jumpbox_forums.level %}{% if S_CONTENT_DIRECTION eq 'rtl' %}&#8626;{% else %}&#8627;{% endif %} &nbsp;{% endif %} {{ jumpbox_forums.FORUM_NAME }}</span></a></li>
-				{% endif %}
-				{% endfor %}
+			{{ block('jumpbox_links', _self) }}
 			</ul>
 		</div>
 	</div>
@@ -54,11 +50,13 @@
 		<div class="dropdown">
 		<div class="pointer"><div class="pointer-inner"></div></div>
 			<ul class="dropdown-contents">
+				{% block jumpbox_links %}	
 				{% for jumpbox_forums in loops.jumpbox_forums %}
 				{% if jumpbox_forums.FORUM_ID neq -1 %}
 				<li><a href="{{ jumpbox_forums.LINK }}" class="{% if jumpbox_forums.level %}jumpbox-sub-link{% elseif jumpbox_forums.S_IS_CAT %}jumpbox-cat-link{% else %}jumpbox-forum-link{% endif %}">{% for level in jumpbox_forums.level %}<span class="spacer"></span>{% endfor %} <span>{% if jumpbox_forums.level %}{% if S_CONTENT_DIRECTION eq 'rtl' %}&#8626;{% else %}&#8627;{% endif %} &nbsp;{% endif %} {{ jumpbox_forums.FORUM_NAME }}</span></a></li>
 				{% endif %}
 				{% endfor %}
+				{% endblock jumpbox_links %}	
 			</ul>
 		</div>
 	</div>

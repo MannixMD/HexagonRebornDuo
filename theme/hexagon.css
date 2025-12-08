@@ -1192,7 +1192,8 @@ a.nav-avatar img {
 		margin: 9px 0;
 	}
 
-	.nojs .wrap:has([data-mobile-button]:hover) .overlay {
+	.nojs .wrap:has([data-mobile-button]:hover) #myNav,
+	.nojs #jumpbox-btn:hover+#jumpbox-responsive {
 		transform: scaleX(1);
 		opacity: 1;
 	}
