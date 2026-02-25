@@ -34,14 +34,14 @@
 			</span>
 		</span>
 	</div>
-	<div id="jumpbox-responsive" class="overlay">
+	<dialog id="jumpbox-responsive" class="overlay">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeJumpbox()">&times;</a>
 		<div class="overlay-content">
 			<ul role="menu">
 			{{ block('jumpbox_links', _self) }}
 			</ul>
 		</div>
-	</div>
+	</dialog>
 	<div class="jumpbox responsive-hide dropdown-container dropdown-container-right{% if not S_IN_MCP %} dropdown-up{% endif %} dropdown-{{ S_CONTENT_FLOW_BEGIN }} dropdown-button-control" id="jumpbox">
 		<span title="{% if S_IN_MCP and S_MERGE_SELECT %}{{ lang('SELECT_TOPICS_FROM') }}{% elseif S_IN_MCP %}{{ lang('MODERATE_FORUM') }}{% else %}{{ lang('JUMP_TO') }}{% endif %}" class="button button-secondary dropdown-trigger dropdown-select">
 			<i class="icon fa-level-up fa-fw" aria-hidden="true"></i>

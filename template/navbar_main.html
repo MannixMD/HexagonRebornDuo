@@ -1,5 +1,5 @@
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" tabindex="-1" class="closebtn" onclick="closeNav()">&times;</a>
+<dialog id="myNav" class="overlay">
+  <a href="javascript:void(0)" autofocus class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
 	<ul class="overlay-menu" role="menu">
 		{% if S_USER_LOGGED_IN %}
@@ -9,7 +9,7 @@
 		{{ block('nav_main_left_side', _self) }}
 	</ul>
   </div>
-</div>
+</dialog>
 
 <ul id="nav-main" class="nav-main linklist" role="menubar">
 		<li class="responsive-show" data-mobile-button style="display:none;" onclick="openNav()"><i class="icon fa-ellipsis-h fa-fw" aria-hidden="true"></i></li>

@@ -9,7 +9,6 @@
 
 	html,
 	body {
-		background-image: url("./images/bg.jpg");
 		--s: 16px;
 		--c: #0000, hsl(0deg 0% 15% / 50%)
 			/* first color */
@@ -18,6 +17,7 @@
 		--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
 		--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 		background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0 0% 9% / 1);
+		background-image: url("./images/bg.jpg");
 		background-size: calc(2* var(--s)) calc(3.46* var(--s));
 		color-scheme: dark;
 	}
@@ -47,7 +47,6 @@
 
 	html,
 	body {
-		background-image: url("./images/bg-light.jpg");
 		--s: 16px;
 		--c: #0000, hsl(0deg 0% 90.98% / 50%)
 			/* first color */
@@ -56,6 +55,7 @@
 		--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
 		--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 		background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0deg 0% 85.1%);
+		background-image: url("./images/bg-light.jpg");
 		background-size: calc(2* var(--s)) calc(3.46* var(--s));
 		color-scheme: light;
 	}
@@ -92,7 +92,6 @@
 
 html[data-theme="dark"],
 [data-theme="dark"] body {
-	background-image: url("./images/bg.jpg");
 	--s: 16px;
 	--c: #0000, hsl(0deg 0% 15% / 50%)
 		/* first color */
@@ -101,6 +100,7 @@ html[data-theme="dark"],
 	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
 	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0 0% 9% / 1);
+	background-image: url("./images/bg.jpg");
 	background-size: calc(2* var(--s)) calc(3.46* var(--s));
 }
 
@@ -116,7 +116,6 @@ html[data-theme="dark"],
 
 html[data-theme="light"],
 [data-theme="light"] body {
-	background-image: url("./images/bg-light.jpg");
 	--s: 16px;
 	--c: #0000, hsl(0deg 0% 90.98% / 50%)
 		/* first color */
@@ -125,6 +124,7 @@ html[data-theme="light"],
 	--g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
 	--g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
 	background: var(--g1), var(--g1) var(--s) calc(1.73* var(--s)), var(--g2), var(--g2) var(--s) calc(1.73* var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73* var(--s)) hsl(0deg 0% 85.1%);
+	background-image: url("./images/bg-light.jpg");
 	background-size: calc(2* var(--s)) calc(3.46* var(--s));
 }
 
@@ -150,13 +150,13 @@ html[data-theme="light"],
 Style oriented edits
 -------------------------------------------------------------- */
 ul#nav-main {
-	padding: 5px 0;
-	z-index: 5;
 	position: sticky;
-	width: 100%;
-	left: 0;
+	z-index: 5;
 	top: 0;
+	left: 0;
+	width: 100%;
 	margin: auto;
+	padding: 5px 0;
 }
 
 @media (max-width: 700px) {
@@ -180,8 +180,8 @@ li.rightside.responsive-search {
 }
 
 li#search-box {
-	float: right;
 	top: 0;
+	float: right;
 }
 
 .topicheader {
@@ -221,15 +221,15 @@ li#search-box {
 
 	#page-body,
 	.page-body-inner {
-		width: auto;
 		float: none;
+		width: auto;
 		margin-right: 0;
 	}
 
 	.sidebar {
-		margin: 0 auto;
-		clear: both;
 		float: none;
+		clear: both;
+		margin: 0 auto;
 	}
 }
 
@@ -255,14 +255,14 @@ h2.topic-title,
 
 .action-bar.bar-top,
 .action-bar.bar-bottom {
-	padding: 10px 10px;
 	margin-bottom: 10px;
+	padding: 10px 10px;
 }
 
 .profile-left {
-	float: left;
 	border: 1px solid transparent;
 	border-width: 0px 1px 0 0;
+	float: left;
 }
 
 .profile-left+.postbody {
@@ -279,8 +279,8 @@ a.button.button-icon-only.hexagonbutton {
 
 @media (max-width: 700px) {
 	a.button.hexagonbutton {
-		padding: 2px 5px;
 		line-height: 0.7;
+		padding: 2px 5px;
 	}
 }
 
@@ -346,13 +346,13 @@ dl.panel {
 
 .row-item:before,
 .row-item:after {
+	font-family: hexagon;
 	font-size: 30px;
-	left: 10px;
-	padding: 0px;
 	position: absolute;
 	top: 50%;
+	left: 10px;
+	padding: 0px;
 	transform: translateY(-50%);
-	font-family: hexagon;
 }
 
 .global_read:before,
@@ -411,20 +411,20 @@ dl.panel {
 }
 
 .forum_link:before {
-	content: "\f08e";
 	font-family: FontAwesome;
+	content: "\f08e";
 }
 
 .forum_unread_subforum:after {
-	content: "\e800";
-	margin: 10px 0 0 16px;
 	font-size: 15px;
+	margin: 10px 0 0 16px;
+	content: "\e800";
 }
 
 .forum_read_subforum:after {
-	content: "\e800";
-	margin: 10px 0 0 16px;
 	font-size: 15px;
+	margin: 10px 0 0 16px;
+	content: "\e800";
 }
 
 .forum_read_locked:after,
@@ -436,10 +436,10 @@ dl.panel {
 .sticky_read_locked_mine:after,
 .topic_read_locked:after,
 .topic_read_locked_mine:after {
-	content: "\f023";
-	margin: 1px 0 0 9px;
-	font-size: 20px;
 	font-family: FontAwesome;
+	font-size: 20px;
+	margin: 1px 0 0 9px;
+	content: "\f023";
 }
 
 .forum_unread_locked:after,
@@ -451,24 +451,24 @@ dl.panel {
 .sticky_unread_locked_mine:after,
 .topic_unread_locked:after,
 .topic_unread_locked_mine:after {
-	content: "\f023";
-	margin: 1px 0 0 9px;
-	font-size: 20px;
 	font-family: FontAwesome;
+	font-size: 20px;
+	margin: 1px 0 0 9px;
+	content: "\f023";
 }
 
 .topic_read_hot:after,
 .topic_read_hot_mine:after,
 .topic_unread_hot:after,
 .topic_unread_hot_mine:after {
-	content: "\f0e7";
-	margin: 0 0 0 10px;
-	font-size: 20px;
 	font-family: FontAwesome;
+	font-size: 20px;
+	top: 38%;
+	margin: 0 0 0 10px;
+	content: "\f0e7";
 	-webkit-animation: pulse 2s linear infinite;
 	-moz-animation: pulse 2s linear infinite;
 	animation: pulse 2s linear infinite;
-	top: 38%;
 }
 
 .global_read,
@@ -521,8 +521,8 @@ dl.panel {
 }
 
 .forum_read_subforum::after {
-	color: var(--txt-clr);
 	filter: drop-shadow(-1px 0px var(--sec-clr)) drop-shadow(0px -1px var(--sec-clr)) drop-shadow(0px 1px var(--sec-clr)) drop-shadow(1px 0px var(--sec-clr));
+	color: var(--txt-clr);
 }
 
 dd.lastpost>span>*:not(dfn) {
@@ -531,32 +531,32 @@ dd.lastpost>span>*:not(dfn) {
 }
 
 .mark-read:before {
-	content: "\f046";
 	font-family: FontAwesome;
-	padding-right: 2px;
 	font-size: 20px;
 	font-weight: normal;
+	padding-right: 2px;
+	content: "\f046";
 }
 
 .check:before {
-	content: "\f046";
 	font-family: FontAwesome;
-	padding-right: 2px;
 	font-size: 14px;
 	font-weight: normal;
+	padding-right: 2px;
+	content: "\f046";
 }
 
 .settings:before {
-	content: "\f1de";
 	font-family: FontAwesome;
-	padding-right: 2px;
 	font-size: 20px;
+	padding-right: 2px;
+	content: "\f1de";
 }
 
 fieldset#ThemePicker input {
-	appearance: none;
 	border: none;
 	display: none;
+	appearance: none;
 }
 
 #ThemePicker {
@@ -570,13 +570,13 @@ fieldset#ThemePicker input {
 }
 
 #ThemePicker i::before {
+	font-size: 16px;
+	color: var(--txt-clr);
 	position: relative;
 	z-index: 2;
-	color: var(--txt-clr);
-	font-size: 16px;
+	display: block;
 	margin: 0;
 	padding: 0;
-	display: block;
 	margin-inline: auto;
 }
 
@@ -586,16 +586,16 @@ fieldset#ThemePicker input {
 }
 
 #ThemePicker i::after {
-	content: "\e800";
 	font-family: hexagon;
+	font-size: 27px;
 	position: absolute;
 	top: -5px;
-	font-size: 27px;
+	content: "\e800";
 }
 
 #ThemePicker i.fa-sun-o::after {
-	left: 0;
 	z-index: 1;
+	left: 0;
 }
 
 #ThemePicker i.fa-moon-o::after {
@@ -603,50 +603,51 @@ fieldset#ThemePicker input {
 }
 
 .overlay {
-	height: 100%;
+	border: none;
 	position: fixed;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	overflow-x: hidden;
-	-ms-overflow-style: none;
-	transition: transform ease-in 0.5s, opacity 0.5s ease-in;
-	opacity: 0;
-	transform: scaleX(0);
-	transform-origin: top left;
+	box-sizing: border-box;
 	width: 100%;
+	max-width: unset;
+	height: 100%;
+	max-height: unset;
+	margin: 0;
+	transition: transform ease-in 0.5s, display 0.5s ease-in;;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition-behavior: allow-discrete;
 }
 
-.open {
-	opacity: 1;
+.overlay[open] {
 	transform: scaleX(1);
+	@starting-style{
+		transform: scaleX(0);
+	}
 }
 
 #jumpbox-responsive.overlay {
-	transform-origin: bottom right;
+	transform-origin: right;
 }
 
 .overlay-content {
+	text-align: left;
 	position: relative;
 	top: 15%;
 	width: 100%;
-	text-align: left;
 }
 
 .overlay a {
-	padding: 8px;
-	text-decoration: none;
 	font-size: 30px;
-	/* color: #818181; */
+	text-decoration: none;
 	display: block;
+	padding: 8px;
 	transition: 0.3s;
 }
 
 .overlay a:hover,
 .overlay a:focus {
-	color: #f1f1f1;
 	background-color: #00000080;
 	background-color: rgba(0, 0, 0, 0.5);
+	color: #f1f1f1;
 }
 
 .overlay-content .icon {
@@ -654,10 +655,10 @@ fieldset#ThemePicker input {
 }
 
 .overlay .closebtn {
-	position: absolute;
-	top: -20px;
-	right: 45px;
 	font-size: 60px;
+	position: absolute;
+	top: -5px;
+	right: 20px;
 }
 
 @media screen and (max-height: 450px) {
@@ -702,12 +703,12 @@ fieldset#ThemePicker input {
 }
 
 .overlay-menu .dropdown {
-	display: block;
-	position: unset;
 	background: transparent;
+	border: none;
+	position: unset;
+	display: block;
 	margin: 0;
 	padding: 0;
-	border: none;
 }
 
 .overlay-menu .pointer,
@@ -746,10 +747,10 @@ fieldset#ThemePicker input {
 
 @media (max-width: 700px) {
 	.responsivebutton {
-		bottom: 20px;
 		position: fixed;
-		right: 15px;
 		z-index: 1;
+		right: 15px;
+		bottom: 20px;
 	}
 }
 
@@ -773,21 +774,21 @@ fieldset#ThemePicker input {
 }
 
 a.nav-avatar {
-	text-align: center;
 	font-size: 35px;
+	text-align: center;
 }
 
 a.nav-avatar img {
-	margin-bottom: 2px;
-	max-height: 40px;
 	vertical-align: middle;
 	width: auto;
+	max-height: 40px;
+	margin-bottom: 2px;
 }
 
 .stat-block p {
-	padding: 5px;
-	margin-bottom: 15px;
 	margin-top: 6px;
+	margin-bottom: 15px;
+	padding: 5px;
 }
 
 .stat-block h3 {
@@ -808,19 +809,19 @@ a.nav-avatar img {
 
 .no-avatar .avatar-container {
 	background-image: url(./images/no_avatar.gif);
-	height: 90px;
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 90px;
+	height: 90px;
 }
 
 @media (max-width: 700px) {
 	.no-avatar .avatar-container {
-		background-size: 32px;
 		background-position: inherit;
-		height: 32px;
-		width: 32px;
+		background-size: 32px;
 		float: left;
+		width: 32px;
+		height: 32px;
 		margin-right: 10px;
 	}
 }
@@ -846,8 +847,8 @@ a.nav-avatar img {
 }
 
 .jabber-icon:before {
-	content: "\f0eb";
 	font-size: 16px;
+	content: "\f0eb";
 }
 
 .phpbb_icq-icon:before {
@@ -891,8 +892,8 @@ a.nav-avatar img {
 }
 
 .profile-contact .button:before {
-	top: -5px;
 	font-size: 25px;
+	top: -5px;
 	left: 5px;
 	display: none;
 }
@@ -903,11 +904,11 @@ a.nav-avatar img {
 
 @media (max-width: 700px) {
 	.profile-contact {
-		display: inline-block !important;
-		margin-left: 0 !important;
 		position: absolute;
 		top: 16px;
 		right: 10px;
+		display: inline-block !important;
+		margin-left: 0 !important;
 	}
 
 	.ucp-main .profile-contact {
@@ -919,8 +920,8 @@ a.nav-avatar img {
 	}
 
 	.profile-contact .button:before {
-		top: -13px;
 		font-size: 35px;
+		top: -13px;
 		left: 1px;
 		display: block;
 	}
@@ -935,10 +936,10 @@ a.nav-avatar img {
 }
 
 .custombbcode {
-	margin: 1px !important;
 	width: auto !important;
-	padding: 0px 5px !important;
 	height: 20px !important;
+	margin: 1px !important;
+	padding: 0px 5px !important;
 }
 
 .custombbcode:before {
@@ -962,34 +963,34 @@ a.nav-avatar img {
 }
 
 .badge {
-	position: relative;
-	width: 25px;
-	opacity: 1;
-	padding: 0;
-	top: 5px;
-	isolation: isolate;
 	font-size: .8rem;
+	opacity: 1;
+	position: relative;
+	top: 5px;
+	width: 25px;
+	padding: 0;
+	isolation: isolate;
 }
 
 .badge::before {
-	content: "\e800";
-	font-size: 25px;
-	left: 0;
-	position: absolute;
 	font-family: hexagon;
-	top: -6px;
+	font-size: 25px;
+	position: absolute;
 	z-index: -1;
+	top: -6px;
+	left: 0;
+	content: "\e800";
 }
 
 .badge a {
 	text-align: center;
-	position: initial;
-	white-space: nowrap;
-	width: 25px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 14.43px;
 	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: initial;
+	overflow: hidden;
+	width: 25px;
+	height: 14.43px;
 }
 
 .pagination .button {
@@ -997,23 +998,23 @@ a.nav-avatar img {
 }
 
 .row .pagination li a {
-	padding: 9px 11px;
-	margin: 0;
 	line-height: 1.3;
 	position: relative;
+	margin: 0;
+	padding: 9px 11px;
 	isolation: isolate;
 }
 
 .row .pagination li a:before {
-	font-size: calc(32px * 0.8);
-	content: '\e800';
 	font-family: hexagon;
-	top: -3px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: -1;
+	font-size: calc(32px * 0.8);
 	color: var(--accent-color);
+	position: absolute;
+	z-index: -1;
+	top: -3px;
+	left: 50%;
+	content: '\e800';
+	transform: translateX(-50%);
 }
 
 /* BELL */
@@ -1194,8 +1195,8 @@ a.nav-avatar img {
 
 	.nojs .wrap:has([data-mobile-button]:hover) #myNav,
 	.nojs #jumpbox-btn:hover+#jumpbox-responsive {
-		transform: scaleX(1);
 		opacity: 1;
+		transform: scaleX(1);
 	}
 
 	.nojs .overlay .dropdown {
@@ -1205,8 +1206,8 @@ a.nav-avatar img {
 
 input[type="color"] {
 	border: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	cursor: pointer;
 }
 
