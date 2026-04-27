@@ -44,9 +44,9 @@
 	}
 
 	dl.details dt, dl.details dd {
-		width: auto;
-		float: none;
 		text-align: left;
+		float: none;
+		width: auto;
 	}
 
 	dl.details dd {
@@ -54,8 +54,8 @@
 	}
 
 	p.responsive-center {
-		float: none;
 		text-align: center;
+		float: none;
 		margin-bottom: 5px;
 	}
 
@@ -64,10 +64,10 @@
  	}
 
 	.action-bar > .pagination {
+		text-align: right;
 		float: none;
 		clear: both;
 		padding-bottom: 1px;
-		text-align: right;
 	}
 
 	.action-bar > .pagination li.page-jump {
@@ -84,8 +84,8 @@
 	}
 
 	.attach-controls {
-		margin-top: 5px;
 		width: 100%;
+		margin-top: 5px;
 	}
 
 	.quick-links .dropdown-trigger span {
@@ -126,8 +126,8 @@
 	.wrap {
 		border: none;
 		border-radius: 0;
-		margin: 0;
 		min-width: 290px;
+		margin: 0;
 		padding: 0 5px;
 	}
 
@@ -135,8 +135,8 @@
 	----------------------------------------*/
 	.navbar, .forabg, .forumbg, .post, .panel, .stat-block {
 		border-radius: 0;
-		margin-left: -5px;
 		margin-right: -5px;
+		margin-left: -5px;
 	}
 
 	.cp-main .forabg, .cp-main .forumbg, .cp-main .post, .cp-main .panel {
@@ -147,12 +147,12 @@
 	----------------------------------------*/
 
 	.site-description h1, .site-description p {
-		text-align: inherit;
-		float: none;
-		margin: 5px;
 		line-height: 1.2em;
-		overflow: hidden;
+		text-align: inherit;
 		text-overflow: ellipsis;
+		float: none;
+		overflow: hidden;
+		margin: 5px;
 	}
 
 	.site-description p, .search-header {
@@ -173,10 +173,10 @@
 	/* .topiclist lists
 	----------------------------------------*/
 	li.header dt {
+		font-size: 1.2em;
+		line-height: 1em;
 		text-align: center;
 		text-transform: none;
-		line-height: 1em;
-		font-size: 1.2em;
 		padding-bottom: 4px;
 	}
 
@@ -222,23 +222,23 @@
 	}
 
 	ul.topiclist dd.mark {
-		display: block;
+		text-align: left;
 		position: absolute;
-		right: 5px;
 		top: 17px;
-		margin: 0;
+		right: 5px;
+		display: block;
 		width: auto;
 		min-width: 0;
-		text-align: left;
+		margin: 0;
 		padding-left: 2px;
 	}
 
 	ul.topiclist.forums dd.topics dfn, ul.topiclist.topics dd.posts dfn {
+		font-weight: normal;
 		position: relative;
 		left: 0;
-		width: auto;
 		display: inline;
-		font-weight: normal;
+		width: auto;
 	}
 
 	li.row .responsive-show strong {
@@ -248,15 +248,15 @@
 
 	ul.topiclist li.row dt a.subforum {
 		vertical-align: bottom;
-		overflow: hidden;
 		text-overflow: ellipsis;
+		overflow: hidden;
 		max-width: 100px;
 	}
 
 	/* Pagination
 	----------------------------------------*/
 	.pagination > ul {
-		margin: 5px 0 0;
+		margin: 0 0 0 5px;
 	}
 
 	.row .pagination {
@@ -275,9 +275,9 @@
 	}
 
 	table.responsive.show-header thead, table.responsive.show-header th:first-child {
+		text-align: left !important;
 		display: block;
 		width: auto !important;
-		text-align: left !important;
 	}
 
 	table.responsive.show-header th:first-child span.rank-img {
@@ -289,8 +289,8 @@
 	}
 
 	table.responsive td {
-		width: auto !important;
 		text-align: left !important;
+		width: auto !important;
 		padding: 4px;
 	}
 
@@ -303,8 +303,8 @@
 	}
 
 	table.responsive td > dfn:after {
-		content: ':';
 		padding-right: 5px;
+		content: ':';
 	}
 
 	table.responsive span.rank-img {
@@ -319,8 +319,8 @@
 	/* Forms
 	----------------------------------------*/
 	fieldset dt, fieldset.fields1 dt, fieldset.fields2 dt {
-		width: auto;
 		float: none;
+		width: auto;
 	}
 
 	fieldset dd, fieldset.fields1 dd, fieldset.fields2 dd {
@@ -328,9 +328,9 @@
 	}
 
 	textarea, dd textarea, .message-box textarea {
-		width: 100%;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		width: 100%;
 	}
 
 	dl.pmlist dt {
@@ -374,9 +374,9 @@
 	}
 
 	fieldset.quick-login label {
+		white-space: normal;
 		display: block;
 		margin-bottom: 5px;
-		white-space: normal;
 	}
 
 	fieldset.quick-login label > span {
@@ -391,8 +391,8 @@
 	}
 
 	fieldset.quick-login label[for="autologin"] {
-		display: inline-block;
 		text-align: right;
+		display: inline-block;
 		min-width: 50%;
 	}
 
@@ -400,8 +400,8 @@
 	----------------------------------------*/
 	.column1, .column2, .left-box.profile-details {
 		float: none;
-		width: auto;
 		clear: both;
+		width: auto;
 	}
 	.avatar-rank-container {
 		max-width: 100%;
@@ -432,19 +432,19 @@
 
 	.postprofile, .postbody, .search .postbody {
 		display: block;
-		width: auto;
 		float: none;
-		padding: 0;
+		width: auto;
 		min-height: 0;
+		padding: 0;
 	}
 
 	.post .postprofile {
-		width: auto;
 		border-width: 0 0 1px 0;
-		padding-bottom: 5px;
-		margin: 0 0 5px 0;
-		min-height: 40px;
 		overflow: hidden;
+		width: auto;
+		min-height: 40px;
+		margin: 0 0 5px 0;
+		padding-bottom: 5px;
 	}
 
 	.postprofile dd {
@@ -457,8 +457,8 @@
 	}
 
 	.postprofile .has-avatar .avatar-container {
-		margin: 0;
 		overflow: inherit;
+		margin: 0;
 	}
 
 	.postprofile .avatar-container:after {
@@ -476,13 +476,13 @@
 	}
 
 	.has-profile .postbody h3 {
-		margin-left: 0 !important;
 		margin-right: 0 !important;
+		margin-left: 0 !important;
 	}
 
 	.has-profile .post-buttons {
-		right: 30px;
 		top: 15px;
+		right: 30px;
 	}
 
 	.online {
@@ -496,8 +496,8 @@
 	}
 
 	p {
-		margin-bottom: .5em;
 		overflow: hidden;
+		margin-bottom: .5em;
 	}
 
 	p.rightside {

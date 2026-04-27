@@ -765,6 +765,7 @@ fieldset#ThemePicker input {
 @media (max-width: 700px) {
 	.responsivebutton:before {
 		font-size: 50px;
+		top: -6px;
 	}
 }
 
@@ -920,14 +921,15 @@ a.nav-avatar img {
 	}
 
 	.profile-contact .button:before {
-		font-size: 35px;
-		top: -13px;
-		left: 1px;
+		font-size: 32px;
+		top: -9px;
+		left: 23px;
 		display: block;
 	}
 
 	.profile-contact .button {
 		margin-left: 0;
+		padding-block: 0;		
 	}
 
 	.has-profile .post-buttons {
@@ -1190,7 +1192,7 @@ a.nav-avatar img {
 
 @media (max-width: 700px) {
 	.pagination>ul>li {
-		margin: 9px 0;
+		margin: 0;
 	}
 
 	.nojs .wrap:has([data-mobile-button]:hover) #myNav,
